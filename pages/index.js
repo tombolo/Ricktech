@@ -42,12 +42,12 @@ export default function HomePage({
 }
 
 export async function getServerSideProps() {
-  const featuredProductId = "64af4164225a6aa6c5092265";
+  const featuredProductId = "64b2c44cb49aa244001dd3fa";
   await mongooseConnect();
   const featuredProduct = await Product.findById(featuredProductId);
   const newProducts = await Product.find({}, null, {
     sort: { _id: -1 },
-    limit: 12,
+    limit: 36,
   });
   const laptopsCategory = await Product.find({
     category: { $in: "64b053bb79f3f697eed78063" },
