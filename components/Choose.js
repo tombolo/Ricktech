@@ -20,7 +20,26 @@ const ChooseWrapper = styled.div`
 const ChooseImageContainer = styled.div`
   width: 100%;
   height: 100px;
+  position: relative;
   z-index: 0;
+
+  @media screen and (max-width: 768px) {
+    
+  }
+`;
+
+const StyledImage = styled(Image)`
+  @media screen and (max-width: 768px) {
+
+  }
+`;
+
+const ChooseImageContainer2 = styled.div`
+  width: 100%;
+  height: 100px;
+  position: relative;
+  z-index: 0;
+  
 `;
 
 export default function Choose() {
@@ -28,13 +47,13 @@ export default function Choose() {
     <StyledSection>
       <ChooseWrapper>
         <ChooseImageContainer>
-          <Image src={ChooseImage} layout="fill" objectFit="cover" />
+
         </ChooseImageContainer>
       </ChooseWrapper>
       <ChooseWrapper>
-        <ChooseImageContainer>
-          <Image src={ChooseImage1} layout="fill" objectFit="cover" />
-        </ChooseImageContainer>
+        <ChooseImageContainer2>
+          
+        </ChooseImageContainer2>
       </ChooseWrapper>
     </StyledSection>
   );

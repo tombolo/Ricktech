@@ -7,12 +7,12 @@ import { CartContext } from "@/components/CartContext";
 
 const ProductWrapper = styled.div`
   border-radius: 10px;
-  position: relative; 
+  position: relative;
   &:hover {
     padding: 0px;
     box-shadow: 0 3px 6px black;
     .wishlist-icon {
-      display: block; 
+      display: block;
     }
   }
   @media screen and (max-width: 768px) {
@@ -38,6 +38,9 @@ const WhiteBox = styled(Link)`
   img {
     max-width: 100%;
     max-height: 120px;
+    @media screen and (max-width: 768px) {
+      max-height: 80px;
+    }
   }
 `;
 
@@ -47,8 +50,8 @@ const Title = styled(Link)`
   color: inherit;
   text-decoration: none;
   margin: 3px;
-  white-space: nowrap; 
-  overflow: hidden; 
+  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 `;
 
@@ -57,11 +60,8 @@ const ProductInfoBox = styled.div`
 `;
 
 const PriceRow = styled.div`
-  display: block;
-  @media screen and (min-width: 768px) {
-    display: flex;
-    gap: 5px;
-  }
+  display: flex;
+  gap: 5px;
   align-items: center;
   justify-content: space-between;
   margin-top: 2px;
@@ -75,44 +75,42 @@ const Price = styled.div`
   color: #000080;
   @media screen and (min-width: 768px) {
     font-size: 0.8rem;
-    font-weight: 600;
-    text-align: left;
   }
 `;
 
 const AddToCartButton = styled(Button)`
-  background-color: ${props => (props.added ? "white" : "#000080")};
-  color: ${props => (props.added ? "#000080" : "white")};
+  background-color: ${(props) => (props.added ? "white" : "#000080")};
+  color: ${(props) => (props.added ? "#000080" : "white")};
   padding: 4px 0px;
   transition: background-color 0.3s ease;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
-    background-color: ${props => (props.added ? "white" : "#000080")};
+    background-color: ${(props) => (props.added ? "white" : "#000080")};
   }
 
   @media screen and (max-width: 767px) {
-    display: flex;
-    width: 157px;
-    align-items: center;
-    justify-content: center;
-    
+    font-size: 0.8rem;
   }
 `;
 
 const WishlistIcon = styled(FaHeart)`
-  position: absolute; 
-  top: 10px; 
-  right: 10px; 
-  font-size: .8rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0.8rem;
   color: red;
   display: none;
 `;
 
 const ExchangeIcon = styled(FaExchangeAlt)`
-  position: absolute; 
-  top: 30px; 
-  right: 10px; 
-  font-size: .8rem;
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  font-size: 0.8rem;
   color: red;
   display: none;
 `;
@@ -123,7 +121,7 @@ const ProductWrapperHover = styled(ProductWrapper)`
       display: block;
     }
     ${ExchangeIcon} {
-      display: block; 
+      display: block;
     }
   }
 `;
@@ -161,4 +159,3 @@ export default function ProductBox({ _id, title, description, price, images, han
     </ProductWrapperHover>
   );
 }
-

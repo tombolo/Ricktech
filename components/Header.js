@@ -53,7 +53,7 @@ const Wrapper = styled.div`
 
 const SearchContainer = styled.div`
   display: flex;
-  width: 550px;
+  width: 500px;
   border: 1px solid blue;
   border-radius: 20px;
   margin-left: 2px;
@@ -65,7 +65,7 @@ const SearchContainer = styled.div`
 
 const SearchBar = styled.input`
   display: flex;
-  width: 500px;
+  width: 450px;
   height: 20px;
   outline: none;
   border: none;
@@ -84,19 +84,19 @@ const StyledNav = styled.nav`
       ? `
     display: block;
     width: 100%;
-    margin-left: -20px;
-    margin-top: 40px;
+    margin-left: px;
+    margin-top: 50px;
   `
       : `
     display: none;
   `}
   gap: 15px;
   position: fixed;
-  top: 0;
+  top: 70px;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 70px 20px 20px;
+  padding: ;
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -106,37 +106,23 @@ const StyledNav = styled.nav`
 `;
 
 const StyledNav2 = styled.nav`
-  ${props =>
-    props.mobileNavActive
-      ? `
-    display: block;
-    width: 100%;
-    margin-left: -20px;
-  `
-      : `
-    display: flex;
-  `}
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
   gap: 15px;
   position: fixed;
   top: 0;
-  bottom: 0;
-  left: 0;
   right: 0;
-  padding: 70px 20px 20px;
-
-  @media screen and (min-width: 768px) {
-    display: flex;
-    position: static;
-    padding: 0;
-  }
+  padding: 0px;
+  z-index: 30;
 
   @media screen and (max-width: 768px) {
-    display: flex;
-    position: static;
-    padding: 0;
+    top: 16px;
+    padding: 10px;
+    width: 100%;
   }
-  
 `;
+
 
 const StyledNav4 = styled.nav`
   ${props =>
@@ -162,7 +148,7 @@ const NavLink4 = styled(Link)`
   display: block;
   color: #000080;
   text-decoration: underline;
-  padding: 0px 0;
+  margin-right: 140px;
 
   &:hover {
     position: relative;
@@ -184,6 +170,7 @@ const StyledNav3 = styled.nav`
     width: 100%;
     margin-left: 0px;
     color: #000080;
+    
   `
       : `
     display: none;
@@ -198,11 +185,12 @@ const StyledNav3 = styled.nav`
 `;
 
 const NavLink3 = styled(Link)`
-  font-size: 13px;
+  font-size: 12px;
   display: block;
   color: #000080;
   text-decoration: none;
-  padding: 0px 0;
+  border-bottom: 3px solid red;
+  padding-bottom: 12px;
 
   &:hover {
     position: relative;
@@ -305,12 +293,14 @@ const NavLink2 = styled(Link)`
   display: block;
   color: #000080;
   text-decoration: none;
-  padding: 0px 0;
+  padding: 25px 50px;
 
   @media screen and (max-width: 768px) {
     display: flex;
     color: #000080;
     font-size: 17px;
+    padding: 0px 10px;
+    
   }
 `;
 
@@ -349,11 +339,17 @@ const DiscountImageWrapper = styled.div`
     margin-left: 170px;
     transform: translateY(-50%);
   }
+
   @media screen and (max-width: 768px) {
-    display: flex;
-    top: 70px;
-    right: 180px;
+    position: fixed;
+    top: 80px;
+    left: 25%;
+    transform: translateX(-50%);
+    width: 150px;
     height: 30px;
+    .arrow-icon {
+      left: -13%;
+    }
   }
 `;
 
@@ -361,13 +357,19 @@ const DiscountImageElement = styled(Image)`
   width: 30px;
   height: 30px;
   border-radius: 50%;
+
+  @media screen and (max-width: 768px) {
+    width: 25px;
+    height: 25px;
+  }
 `;
+
 const LogoImageElement = styled(Image)`
   display: flex;
   align-items: center;
   margin-left: 10px;
-  width: 80px;
-  height: 20px;
+  width: 120px;
+  height: 30px;
 `;
 
 const DiscountInfo = styled.div`
@@ -531,7 +533,7 @@ export default function Header() {
         <Wrapper>
         
           <Logo href={"/"}>
-          <LogoImageElement src={LogoImage} alt="Discount" width={120} height={40} />
+          <LogoImageElement src={LogoImage} alt="Discount" width={200} height={80} />
   
           </Logo>
           
