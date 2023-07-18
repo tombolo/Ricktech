@@ -18,6 +18,9 @@ const StyledHeader = styled.header`
   position: fixed;
   width: 100%;
   z-index: 20;
+  @media screen and (max-width: 768px) {
+    margin-top: -10px;
+  }
 `;
 
 const StyledHeader2 = styled.header`
@@ -93,7 +96,7 @@ const StyledNav = styled.nav`
   `}
   gap: 15px;
   position: fixed;
-  top: 70px;
+  top: 60px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -119,7 +122,7 @@ const StyledNav2 = styled.nav`
 
   @media screen and (max-width: 768px) {
     top: 16px;
-    padding-top: 10px;
+    padding-top: 0px;
     width: 100%;
   }
 `;
@@ -338,13 +341,14 @@ const DiscountImageWrapper = styled.div`
     width: 30px;
     height: 30px;
     color: white;
-    margin-left: 170px;
+    margin-left: 190px;
+    display: none;
     transform: translateY(-50%);
   }
 
   @media screen and (max-width: 768px) {
     position: fixed;
-    top: 70px;
+    top: 60px;
     left: 25%;
     transform: translateX(-50%);
     width: 150px;

@@ -12,14 +12,15 @@ import Spinner from "@/components/Spinner";
 
 
 const StyledSection = styled.section`
-  margin-top: 0px; /* Apply margin-top to create space between header and products grid */
+
  
   
 `;
 const GridContainer = styled.div`
-  margin-top: 0px; /* Apply margin-top to the products grid */
   padding-top: 150px;
   padding-bottom: 30px;
+  
+
 `;
 
 const SortOption = styled.div`
@@ -57,7 +58,9 @@ const SortingDiv = styled.div`
 
   @media screen and (max-width: 768px) {
     margin-top: 0px;
-    height: 170px;
+    
+    height: 200px;
+    width: 320px;
     display: flex;
     flex-direction: column;
   }
@@ -99,7 +102,8 @@ const ApplySortingButton = styled.button`
   }
 
   @media screen and (max-width: 768px) {
-    padding: 4px;
+    padding: 6px;
+    border-radius: 4px;
   }
 `;
 
