@@ -118,7 +118,7 @@ const StyledNav2 = styled.nav`
 
   @media screen and (max-width: 768px) {
     top: 16px;
-    padding: 10px;
+    padding-top: 10px;
     width: 100%;
   }
 `;
