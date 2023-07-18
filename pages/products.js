@@ -60,7 +60,7 @@ const SortingDiv = styled.div`
     margin-top: 0px;
     
     height: 200px;
-    width: 310px;
+    width: 300px;
     display: flex;
     flex-direction: column;
   }
