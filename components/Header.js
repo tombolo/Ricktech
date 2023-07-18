@@ -325,7 +325,7 @@ const DiscountImageWrapper = styled.div`
   position: fixed;
   top: 75px;
   right: 100px;
-  width: 200px;
+  width: 300px;
   height: 50px;
   display: flex;
   align-items: center;
@@ -370,6 +370,9 @@ const LogoImageElement = styled(Image)`
   margin-left: 10px;
   width: 120px;
   height: 30px;
+  @media screen and (max-width: 768px) {
+    margin-left: -5px;
+  }
 `;
 
 const DiscountInfo = styled.div`
