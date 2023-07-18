@@ -16,13 +16,19 @@ const ProductWrapper = styled.div`
     }
   }
   @media screen and (max-width: 768px) {
-    box-shadow: 0 3px 6px black;
+    border: 1px solid grey;
     .wishlist-icon {
       display: block;
     }
     .exchange-icon {
       display: block;
     }
+
+    &:hover {
+      padding: 0px;
+      box-shadow: 0 3px 6px black;
+    }
+
   }
 `;
 

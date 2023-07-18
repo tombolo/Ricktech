@@ -29,6 +29,7 @@ const StyledHeader2 = styled.header`
 
   @media screen and (max-width: 768px) {
     height: 50px;
+    margin-top: -10px;
   }
 `;
 
@@ -281,6 +282,7 @@ const NavLink = styled(Link)`
     border: .5px solid grey;
     font-size: 14px;
     font-weight: 520;
+    margin-top: -10px;
   }
 
   @media screen and (min-width: 768px) {
@@ -342,7 +344,7 @@ const DiscountImageWrapper = styled.div`
 
   @media screen and (max-width: 768px) {
     position: fixed;
-    top: 80px;
+    top: 70px;
     left: 25%;
     transform: translateX(-50%);
     width: 150px;
