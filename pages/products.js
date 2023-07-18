@@ -17,7 +17,7 @@ const StyledSection = styled.section`
   
 `;
 const GridContainer = styled.div`
-  padding-top: 150px;
+  padding-top: 130px;
   padding-bottom: 30px;
   
 
@@ -60,7 +60,7 @@ const SortingDiv = styled.div`
     margin-top: 0px;
     
     height: 200px;
-    width: 320px;
+    width: 310px;
     display: flex;
     flex-direction: column;
   }
