@@ -24,7 +24,7 @@ export default function HomePage({
   recommendCategory,
 }) {
   return (
-    <StyledPage>
+    
       <Header />
       <Featured product={featuredProduct} />
       <NewProducts products={newProducts} />
@@ -37,7 +37,7 @@ export default function HomePage({
       <LaptopsCategory products={laptopsCategory} />
       
       <Footer />
-    </StyledPage>
+    
   );
 }
 

@@ -6,6 +6,7 @@ const FooterWrapper = styled.footer`
   padding: 5px;
   position: relative;
   z-index: 100;
+  width: 100%;
 `;
 
 const FooterTitle = styled.h3`

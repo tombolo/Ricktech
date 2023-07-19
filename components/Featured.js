@@ -11,10 +11,8 @@ const Bg = styled.div`
   color: #fff;
   padding-top: 150px;
   padding-bottom: 40px;
-
-  @media screen and (min-width: 768px) {
-    width: 100%;
-  }
+  width: 100%;
+  
 
   
 `;
