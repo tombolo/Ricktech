@@ -59,7 +59,7 @@ const Title = styled(Link)`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     font-size: 0.5rem;
     font-weight: small;
   }
