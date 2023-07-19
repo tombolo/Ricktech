@@ -108,6 +108,23 @@ const SearchContainer = styled.div`
   }
 `;
 
+const SearchContainer1 = styled.div`
+  margin-top: -55px;
+  display: flex;
+  width: 270px;
+  border: 1px solid white;
+  border-radius: 0px;
+  margin-left: 40px;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+`;
+
 const SearchBar = styled.input`
   display: flex;
   width: 450px;
@@ -116,6 +133,22 @@ const SearchBar = styled.input`
   border: none;
   padding: 5px;
   border-radius: 20px;
+`;
+
+const SearchBar1 = styled.input`
+  display: flex;
+  width: 230px;
+  height: 20px;
+  outline: none;
+  border: none;
+  padding: 5px;
+  border-radius: 0px;
+`;
+
+const SearchIconWrapper1 = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
 `;
 
 const SearchIconWrapper = styled.div`
@@ -681,6 +714,16 @@ export default function Header() {
             <BarsIcon />
             </NavButton>
           </Wrapper>
+
+
+          <SearchContainer1>
+            <SearchBar1 type="text" placeholder="Search for Laptops, Computers, Accessories and Electronic" />
+            <SearchIconWrapper1>
+              <SearchIcon width={20} style={{ color: 'white' }} />
+            </SearchIconWrapper1>
+          </SearchContainer1>
+
+
           <DiscountImageWrapper>
             <DiscountImageElement src={DiscountImage} alt="Discount" />
             <DiscountInfo>
