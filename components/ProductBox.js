@@ -17,6 +17,7 @@ const ProductWrapper = styled.div`
   }
   @media screen and (max-width: 768px) {
     border: 1px solid grey;
+    box-shadow: 0 2px 4px black;
     .wishlist-icon {
       display: block;
     }

@@ -117,7 +117,7 @@ const SearchContainer1 = styled.div`
   width: 280px;
   border: 1px solid white;
   border-radius: 0px;
-  margin-left: 60px;
+  margin-left: 43px;
 
   @media screen and (max-width: 768px) {
     display: flex;
@@ -176,7 +176,7 @@ const StyledNav = styled.nav`
     display: block;
     width: 100%;
     margin-left: px;
-    margin-top: 50px;
+    margin-top: 40px;
   `
       : `
     display: none;
@@ -260,7 +260,6 @@ const StyledNav3 = styled.nav`
     width: 100%;
     margin-left: 0px;
     color: #000080;
-    
   `
       : `
     display: none;
