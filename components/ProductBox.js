@@ -59,6 +59,9 @@ const Title = styled(Link)`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  @media screen and (max-width: 768px) {
+    font-size: 0.5rem;
+  }
 `;
 
 const ProductInfoBox = styled.div`
