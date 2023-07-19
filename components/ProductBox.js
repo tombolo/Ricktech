@@ -133,7 +133,7 @@ const ProductWrapperHover = styled(ProductWrapper)`
 `;
 
 export default function ProductBox({ _id, title, description, price, images, handleProductChange }) {
-  console.log("ProductBox re-rendered:", _id);
+
   const { addProduct } = useContext(CartContext);
   const [isAdded, setIsAdded] = useState(false);
   const url = "/product/" + _id;

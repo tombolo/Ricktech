@@ -67,7 +67,7 @@ const StyledHeader3 = styled.header`
   .email,
   .phone-number {
     font-size: 11px;
-    color: grey;
+    color: #000080;
   }
 `;
 
@@ -575,6 +575,26 @@ const CategoriesLink = styled.div`
   }
 `;
 
+const SearchResults = styled.div`
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid gray;
+  border-top: none;
+`;
+
+const SearchResultItem = styled.div`
+  padding: 10px;
+  border-bottom: 1px solid gray;
+
+  &:last-child {
+    border-bottom: none;
+  }
+`;
+
+
 
 
 
@@ -608,6 +628,23 @@ export default function Header() {
       setShowCategoriesDropdown(false);
     }, 3000); // Adjust the delay as needed
   };
+
+
+
+  //SEARCH BAR FUNCTIONALITY
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+
+  const handleSearch = async () => {
+    try {
+      const response = await fetch(`/api/search?query=${searchQuery}`);
+      const data = await response.json();
+      setSearchResults(data.results);
+    } catch (error) {
+      console.error('Error searching THE PRODUCTS:', error);
+    }
+  };
+
 
   
 
@@ -660,12 +697,33 @@ export default function Header() {
                <ChevronDownIcon className="arrow-icon" />
             </CustomerServiceLink>
           </StyledNav3>
+
+
           <SearchContainer>
-            <SearchBar type="text" placeholder="Search for Laptops, Computers, Accessories and Electronic" />
+            <SearchBar type="text" 
+            placeholder="Search for Laptops, Computers, Accessories and Electronic"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)} />
             <SearchIconWrapper>
-              <SearchIcon width={20} />
+              <SearchIcon onClick={handleSearch} width={20} />
             </SearchIconWrapper>
+
+            {searchResults && searchResults.length > 0 && (
+          <SearchResults>
+            {searchResults.map((result) => (
+              <SearchResultItem key={result._id}>
+                <Link href={`/product/${result._id}`}>
+                  <a>{result.title}</a>
+                </Link>
+              </SearchResultItem>
+            ))}
+          </SearchResults>
+        )}
+  
+
           </SearchContainer>
+
+
           <StyledNav4 mobileNavActive={mobileNavActive}>
             <NavLink4 href="#">0757351475 / 0707543535</NavLink4>
             <NavLink4 href="#">ndanumumo93@gmail.com</NavLink4>
