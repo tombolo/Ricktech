@@ -26,7 +26,7 @@ const TypingMessages = () => {
     const deletingDelay = 1000; // Delay between deleting each character
     const initialPause = 1000; // Pause before starting to type
 
-    const randomDelay = () => Math.floor(Math.random() * 100) + 50; // Random delay between 50ms and 150ms
+    const randomDelay = () => Math.floor(Math.random() * 1000) + 50; // Random delay between 50ms and 150ms
 
     const handleMessage = () => {
       const currentMessageText = messages[currentMessageIndex];

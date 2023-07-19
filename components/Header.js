@@ -1,7 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
 import Center from "@/components/Center";
-import TypingMessages from "@/components/TypingMessages"
 import { useContext, useState, useRef } from "react";
 import { CartContext } from "@/components/CartContext";
 import BarsIcon from "@/components/icons/Bars";
@@ -619,11 +618,11 @@ export default function Header() {
 
     <StyledHeader3>
         <Center>
-          <TypingMessages />
+          <div className="email">ndanumumo93@gmail.comm / +254 757351475</div>
         </Center>
       </StyledHeader3>
 
-
+      
     <StyledHeader>
 
 
