@@ -66,8 +66,8 @@ const StyledHeader3 = styled.header`
 
   .email,
   .phone-number {
-    font-size: 12px;
-    color: #000080;
+    font-size: 11px;
+    color: grey;
   }
 `;
 
