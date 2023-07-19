@@ -29,6 +29,7 @@ const StyledHeader = styled.header`
     margin-top: 0px;
     padding-top: -15px;
     height: 40px;
+    width: 100%;
   }
 `;
 
@@ -42,6 +43,7 @@ const StyledHeader2 = styled.header`
   @media screen and (max-width: 768px) {
     height: 50px;
     margin-top: -15px;
+    width: 100%;
   }
 `;
 
@@ -57,10 +59,11 @@ const StyledHeader3 = styled.header`
 
   @media screen and (max-width: 768px) {
     display: flex;
-    align-items: center; /* Updated */
+    align-items: center; 
     border-bottom: 1px solid grey;
     height: 20px;
     margin-top: 0px;
+    width: 100%;
     background-color: #eee;
   }
 
@@ -196,8 +199,7 @@ const StyledNav2 = styled.nav`
 
   @media screen and (max-width: 768px) {
     top: 30px;
-    padding-top: 0px;
-    width: 100%;
+    padding-right: 0px;
   }
 `;
 

@@ -2,13 +2,23 @@ import styled from "styled-components";
 import Image from 'next/image';
 import Center from "@/components/Center";
 
-const StyledSection = styled.div`
-  display: flex;
+
+const StyledSection = styled.section`
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-left: 0px;
   box-shadow: 0 3px 4px black;
   margin-top: 30px;
   position: relative;
   z-index: 0;
   width: 100%;
+  
+  @media screen and (max-width: 768px) {
+    margin-left: 0px;;
+  }
+  @media screen and (min-width: 768px) {
+    margin-right: 0px;;
+  }
 `;
 
 const ChooseWrapper = styled.div`
@@ -44,7 +54,7 @@ const ChooseImageContainer2 = styled.div`
 
 export default function Choose() {
   return (
-    <Center>
+    
     <StyledSection>
       
       <ChooseWrapper>
@@ -58,6 +68,6 @@ export default function Choose() {
         </ChooseImageContainer2>
       </ChooseWrapper>
     </StyledSection>
-    </Center>
+
   );
 }

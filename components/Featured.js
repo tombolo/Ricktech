@@ -11,9 +11,12 @@ const Bg = styled.div`
   color: #fff;
   padding-top: 150px;
   padding-bottom: 40px;
-  width: 100%;
-  
 
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    padding-right: 10px;
+  }
+  
   
 `;
 
@@ -41,7 +44,7 @@ const ColumnsWrapper = styled.div`
     max-width: 100%;
     max-height: 200px;
     display: block;
-    margin: 0 auto;
+    margin: 0;
   }
 
   div:nth-child(1) {

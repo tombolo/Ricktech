@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FaTruck, FaThumbsUp, FaClock, FaMoneyBill, FaShieldAlt } from "react-icons/fa";
 
 const StyledSection = styled.section`
-  padding: 10px 0px;
+  padding: 0px;
   background-color: white;
   margin-top: 20px;
   border-radius: 0px;
@@ -14,8 +14,8 @@ const StyledSection = styled.section`
 
   @media screen and (max-width: 768px) {
     flex-wrap: wrap;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 7px;
+    margin-right: 0px;
   }
 `;
 
@@ -35,8 +35,8 @@ const IconContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 50px;
-  margin-right: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
   margin-top: 10px;
   border-right: 1px solid grey;
 
@@ -71,7 +71,6 @@ const BlueIcon = styled.div`
 export default function Service() {
   return (
     <StyledSection>
-      <Center>
         <IconsContainer>
           <IconContainer>
             <BlueIcon>
@@ -104,7 +103,6 @@ export default function Service() {
             <IconTitle>Warranty</IconTitle>
           </IconContainer>
         </IconsContainer>
-      </Center>
     </StyledSection>
   );
 }

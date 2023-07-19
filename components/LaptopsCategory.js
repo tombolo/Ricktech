@@ -5,7 +5,15 @@ import ProductsGrid from "@/components/ProductsGrid";
 
 const StyledSection = styled.section`
   padding-top: 0px;
-  padding-bottom: 30px;
+  padding-bottom: 0px;
+  margin-left: 20px;
+  
+  @media screen and (max-width: 768px) {
+    margin-left: 10px;;
+  }
+  @media screen and (min-width: 768px) {
+    margin-right: 20px;;
+  }
 `;
 
 const Title = styled.h2`
@@ -19,10 +27,8 @@ const Title = styled.h2`
 export default function NewProducts({products}) {
   return (
     <StyledSection>
-    <Center>
       <Title>Laptops</Title>
       <ProductsGrid products={products} />
-    </Center>
     </StyledSection>
   );
 }

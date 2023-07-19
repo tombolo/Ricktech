@@ -60,7 +60,7 @@ const Title = styled(Link)`
   overflow: hidden;
   text-overflow: ellipsis;
   @media screen and (max-width: 768px) {
-    font-size: 0.5rem;
+    font-size: 13px;
     font-weight: small;
   }
 `;
@@ -84,7 +84,7 @@ const Price = styled.div`
   text-align: left;
   color: #000080;
   @media screen and (min-width: 768px) {
-    font-size: 0.8rem;
+    font-size: 13px;
   }
 `;
 

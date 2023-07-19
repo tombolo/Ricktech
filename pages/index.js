@@ -13,7 +13,9 @@ import Service from "@/components/Service";
 import Choose from "@/components/Choose";
 import Footer from "@/components/Footer";
 
-const StyledPage = styled.div``;
+const StyledPage = styled.div`
+width: 100%;
+`;
 
 export default function HomePage({
   featuredProduct,
@@ -24,7 +26,7 @@ export default function HomePage({
   recommendCategory,
 }) {
   return (
-    
+    <StyledPage>
       <Header />
       <Featured product={featuredProduct} />
       <NewProducts products={newProducts} />
@@ -37,6 +39,7 @@ export default function HomePage({
       <LaptopsCategory products={laptopsCategory} />
       
       <Footer />
+      </StyledPage>
     
   );
 }
