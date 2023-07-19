@@ -28,7 +28,6 @@ const ProductWrapper = styled.div`
       padding: 0px;
       box-shadow: 0 3px 6px black;
     }
-
   }
 `;
 
@@ -114,15 +113,23 @@ const WishlistIcon = styled(FaHeart)`
   font-size: 0.8rem;
   color: red;
   display: none;
+  background-color: #eee;
+  padding: 7px;
+  border-radius: 50%;
+  border: .6px solid grey;
 `;
 
 const ExchangeIcon = styled(FaExchangeAlt)`
   position: absolute;
-  top: 30px;
+  top: 47px;
   right: 10px;
   font-size: 0.8rem;
   color: red;
   display: none;
+  background-color: #eee;
+  padding: 7px;
+  border-radius: 50%;
+  border: .6px solid grey;
 `;
 
 const ProductWrapperHover = styled(ProductWrapper)`
@@ -137,7 +144,6 @@ const ProductWrapperHover = styled(ProductWrapper)`
 `;
 
 export default function ProductBox({ _id, title, description, price, images, handleProductChange }) {
-
   const { addProduct } = useContext(CartContext);
   const [isAdded, setIsAdded] = useState(false);
   const url = "/product/" + _id;

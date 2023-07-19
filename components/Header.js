@@ -52,16 +52,16 @@ const StyledHeader2 = styled.header`
 
 const StyledHeader3 = styled.header`
   display: none;
-  border-bottom: 1px solid grey;
-  height: 20px;
+  border-bottom: 1px solid #000080;
+  height: 5px;
   margin-top: 0px;
   background-color: #eee;
 
   @media screen and (max-width: 768px) {
     display: flex;
     align-items: center; 
-    border-bottom: 1px solid grey;
-    height: 20px;
+    border-bottom: 1px solid #000080;
+    height: 10px;
     margin-top: 0px;
     width: 100%;
     background-color: #eee;
@@ -101,10 +101,10 @@ const Wrapper = styled.div`
 
 const SearchContainer = styled.div`
   display: flex;
-  width: 500px;
+  width: 490px;
   border: 1px solid blue;
   border-radius: 20px;
-  margin-left: 2px;
+  margin-left: 10px;
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -114,10 +114,10 @@ const SearchContainer = styled.div`
 const SearchContainer1 = styled.div`
   margin-top: -55px;
   display: flex;
-  width: 270px;
+  width: 280px;
   border: 1px solid white;
   border-radius: 0px;
-  margin-left: 40px;
+  margin-left: 60px;
 
   @media screen and (max-width: 768px) {
     display: flex;
@@ -152,12 +152,22 @@ const SearchIconWrapper1 = styled.div`
   display: flex;
   justify-content: flex-end;
   padding: 5px;
+  margin-left: 5px;
+
 `;
 
 const SearchIconWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
+  background-color: #000080;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 7px;
+  &:hover {
+    background-color: blue;
+  }
 `;
+
 
 const StyledNav = styled.nav`
   ${props =>
@@ -198,7 +208,7 @@ const StyledNav2 = styled.nav`
   z-index: 30;
 
   @media screen and (max-width: 768px) {
-    top: 30px;
+    top: 22px;
     padding-right: 0px;
   }
 `;
@@ -482,17 +492,18 @@ const DiscountTextBold = styled.p`
 const CartIconWrapper = styled.div`
   display: flex;
   align-items: center;
+  height: 25px;
 `;
 
 const CartIconStyled = styled(ShoppingCartIcon)`
-  width: 18px;
-  height: 18px;
+  width: 30px;
+  height: 30px;
   color: #000080;
-  margin-right: 5px;
+  margin-right: 10px;
 
   @media screen and (max-width: 768px) {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
   }
 `;
 
@@ -657,7 +668,7 @@ export default function Header() {
 
     <StyledHeader3>
         <Center>
-          <div className="email">ndanumumo93@gmail.comm / +254 757351475</div>
+          <div className="email"></div>
         </Center>
       </StyledHeader3>
 
@@ -707,7 +718,7 @@ export default function Header() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)} />
             <SearchIconWrapper>
-              <SearchIcon onClick={handleSearch} width={20} />
+              <SearchIcon onClick={handleSearch} width={20} style={{ color: 'white' }}  />
             </SearchIconWrapper>
 
             {searchResults && searchResults.length > 0 && (
@@ -735,7 +746,7 @@ export default function Header() {
             <NavLink2 href={"/cart"}>
               <CartIconWrapper>
                 <CartIconStyled />
-                Cart ({cartProducts.length})
+              ({cartProducts.length})
               </CartIconWrapper>
             </NavLink2>
           </StyledNav2>
