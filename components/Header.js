@@ -12,6 +12,13 @@ import { ShoppingCartIcon } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 
 
+const StyledHeader4 = styled.header`
+ position: fixed;
+ width: 100%;
+ z-index: 50;
+  
+`;
+
 
 const StyledHeader = styled.header`
   background-color: white;
@@ -19,7 +26,9 @@ const StyledHeader = styled.header`
   width: 100%;
   z-index: 20;
   @media screen and (max-width: 768px) {
-    margin-top: -10px;
+    margin-top: 0px;
+    padding-top: -15px;
+    height: 40px;
   }
 `;
 
@@ -32,9 +41,41 @@ const StyledHeader2 = styled.header`
 
   @media screen and (max-width: 768px) {
     height: 50px;
-    margin-top: -10px;
+    margin-top: -15px;
   }
 `;
+
+
+
+
+const StyledHeader3 = styled.header`
+  display: none;
+  border-bottom: 1px solid grey;
+  height: 20px;
+  margin-top: 0px;
+  background-color: #eee;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    align-items: center; /* Updated */
+    border-bottom: 1px solid grey;
+    height: 20px;
+    margin-top: 0px;
+    background-color: #eee;
+  }
+
+  .email,
+  .phone-number {
+    font-size: 12px;
+    color: #000080;
+  }
+`;
+
+
+
+
+
+
 
 const Title = styled.h2`
   font-size: .7rem;
@@ -96,7 +137,7 @@ const StyledNav = styled.nav`
   `}
   gap: 15px;
   position: fixed;
-  top: 60px;
+  top: 70px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -121,7 +162,7 @@ const StyledNav2 = styled.nav`
   z-index: 30;
 
   @media screen and (max-width: 768px) {
-    top: 16px;
+    top: 30px;
     padding-top: 0px;
     width: 100%;
   }
@@ -318,7 +359,6 @@ const NavButton = styled.button`
   cursor: pointer;
   position: relative;
   z-index: 3;
-  margin-left: auto;
   margin-top: -10px;
 
   @media screen and (min-width: 768px) {
@@ -347,6 +387,7 @@ const DiscountImageWrapper = styled.div`
   }
 
   @media screen and (max-width: 768px) {
+    display: none;
     position: fixed;
     top: 60px;
     left: 25%;
@@ -377,6 +418,7 @@ const LogoImageElement = styled(Image)`
   width: 120px;
   height: 30px;
   @media screen and (max-width: 768px) {
+    margin-top: -15px;
     margin-left: -5px;
   }
 `;
@@ -537,7 +579,22 @@ export default function Header() {
   
 
   return (
+
+    <StyledHeader4>
+    <StyledHeader3>
+        <Center>
+          <div className="email">support@example.comm / +1 800 555 1212</div>
+        </Center>
+      </StyledHeader3>
     <StyledHeader>
+
+
+
+
+
+
+
+
       <Center>
         <Wrapper>
         
@@ -636,5 +693,6 @@ export default function Header() {
         </Center>
       </StyledHeader2>
     </StyledHeader>
+    </StyledHeader4>
   );
 }
