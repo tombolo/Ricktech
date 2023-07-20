@@ -17,7 +17,7 @@ const StyledSection = styled.section`
   
 `;
 const GridContainer = styled.div`
-  padding-top: 130px;
+  padding-top: 150px;
   padding-bottom: 30px;
   
 

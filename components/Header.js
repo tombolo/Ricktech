@@ -104,7 +104,7 @@ const SearchContainer = styled.div`
   width: 490px;
   border: 1px solid blue;
   border-radius: 20px;
-  margin-left: 10px;
+  margin-left: 60px;
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -131,7 +131,7 @@ const SearchContainer1 = styled.div`
 const SearchBar = styled.input`
   display: flex;
   width: 450px;
-  height: 20px;
+  height: 25px;
   outline: none;
   border: none;
   padding: 5px;
@@ -162,7 +162,8 @@ const SearchIconWrapper = styled.div`
   background-color: #000080;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  padding: 7px;
+  padding: 6px;
+  padding-right: 14px;
   &:hover {
     background-color: blue;
   }
@@ -274,12 +275,13 @@ const StyledNav3 = styled.nav`
 `;
 
 const NavLink3 = styled(Link)`
-  font-size: 12px;
+  font-size: 13px;
   display: block;
   color: #000080;
   text-decoration: none;
   border-bottom: 3px solid red;
-  padding-bottom: 12px;
+  padding-bottom: 0px;
+  display: none;
 
   &:hover {
     position: relative;
@@ -412,7 +414,7 @@ const NavButton = styled.button`
 
 const DiscountImageWrapper = styled.div`
   position: fixed;
-  top: 75px;
+  top: 80px;
   right: 100px;
   width: 300px;
   height: 50px;
@@ -458,9 +460,9 @@ const DiscountImageElement = styled(Image)`
 const LogoImageElement = styled(Image)`
   display: flex;
   align-items: center;
-  margin-left: 10px;
+  margin-left: 3px;
   width: 120px;
-  height: 30px;
+  height: 35px;
   @media screen and (max-width: 768px) {
     margin-top: -15px;
     margin-left: -5px;
@@ -520,7 +522,7 @@ const DropdownMenu = styled.div`
 `;
 
 const DropdownMenu1 = styled.div`
-  margin-top: 30px;
+  margin-top: 22px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -706,7 +708,7 @@ export default function Header() {
                   </DropdownMenu1>
                 </DropdownMenu>
               )}
-               <ChevronDownIcon className="arrow-icon" />
+               
             </CustomerServiceLink>
           </StyledNav3>
 
@@ -768,10 +770,10 @@ export default function Header() {
               {showCategoriesDropdown && (
                 <DropdownMenu>
                   <DropdownMenu1>
-                    <DropdownMenuItem href="#">Laptops</DropdownMenuItem>
-                    <DropdownMenuItem href="#">MacBook</DropdownMenuItem>
-                    <DropdownMenuItem href="#">Iphones</DropdownMenuItem>
-                    <DropdownMenuItem href="#">Android</DropdownMenuItem>
+                    <DropdownMenuItem href={"/laptops"}>Laptops</DropdownMenuItem>
+                    <DropdownMenuItem href={"/macbook"}>MacBook</DropdownMenuItem>
+                    <DropdownMenuItem href={"/iphones"}>Iphones</DropdownMenuItem>
+                    <DropdownMenuItem href={"/android"}>Android</DropdownMenuItem>
                   </DropdownMenu1>
                 </DropdownMenu>
               )}
