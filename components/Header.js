@@ -184,7 +184,7 @@ const StyledNav = styled.nav`
     display: block;
     width: 100%;
     margin-left: px;
-    margin-top: 40px;
+    margin-top: 50px;
   `
       : `
     display: none;
