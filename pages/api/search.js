@@ -22,7 +22,7 @@ export default async function handler(req, res) {
             { description: { $regex: query, $options: 'i' } },
           ],
         })
-        .toArray();
+        ;
 
       client.close();
 

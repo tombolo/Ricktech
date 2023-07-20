@@ -112,12 +112,14 @@ const SearchContainer = styled.div`
 `;
 
 const SearchContainer1 = styled.div`
+  display: flex;
+  align-items: center;
   margin-top: -55px;
   display: flex;
   width: 280px;
   border: 1px solid white;
   border-radius: 0px;
-  margin-left: 25px;
+  margin-left: 20px;
 
   @media screen and (max-width: 768px) {
     display: flex;
