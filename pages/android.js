@@ -81,24 +81,7 @@ export default function AndroidPage({ products: initialProducts }) {
     }, 2000);
   };
 
-  // Generate the breadcrumb based on the current route
-  const generateBreadcrumb = () => {
-    const pathSegments = router.asPath.split('/').filter((segment) => segment !== '');
 
-    return (
-      <Breadcrumb>
-        <span>Home</span>
-        {pathSegments.map((segment, index) => (
-          <React.Fragment key={segment}>
-            {index !== pathSegments.length - 1 && (
-              <GreaterThanSymbol as="span" size={12} />
-            )}
-            <span>{segment}</span>
-          </React.Fragment>
-        ))}
-      </Breadcrumb>
-    );
-  };
 
   return (
     <>
