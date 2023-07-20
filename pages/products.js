@@ -55,10 +55,10 @@ const SortingDiv = styled.div`
   margin-bottom: 20px;
   box-shadow: 0 3px 6px black;
   flex-direction: flex-row;
+  margin-top: 0px;
 
   @media screen and (max-width: 768px) {
     margin-top: 0px;
-    
     height: 200px;
     width: 300px;
     display: flex;

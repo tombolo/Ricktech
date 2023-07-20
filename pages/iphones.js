@@ -24,11 +24,11 @@ const GridContainer = styled.div`
 `;
 
 
-
 const SortOption = styled.div`
 display: flex;
 flex-direction: flex-row;
 padding: 2px;
+margin-top: 10px;
 
 @media screen and (max-width: 768px) {
   margin-right: 10px;
@@ -49,6 +49,10 @@ span {
 }
 `;
 
+
+
+
+
 const SortingDiv = styled.div`
   display: flex;
   background-color: white;
@@ -57,6 +61,7 @@ const SortingDiv = styled.div`
   margin-bottom: 20px;
   box-shadow: 0 3px 6px black;
   flex-direction: flex-row;
+  margin-top: 10px;
 
   @media screen and (max-width: 768px) {
     margin-top: 0px;
@@ -79,6 +84,8 @@ const SortDiv = styled.div`
     flex-direction: column;
   }
 `;
+
+
 
 const PriceRangeDropdown = styled.select`
   font-size: 12px;
@@ -159,12 +166,11 @@ export default function AndroidPage({ products: initialProducts }) {
 
   return (
     <>
-      <StyledSection>
-        <Header />
-      </StyledSection>
+    <Header />
+    
       <Center>
         <GridContainer>
-        <SortingDiv>
+         <SortingDiv>
             <SortDiv>
               <SortOption>
                 <span>Select Price Range</span>

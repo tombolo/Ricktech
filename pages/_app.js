@@ -1,16 +1,9 @@
 import { ThemeProvider } from 'styled-components';
 import { CartContextProvider } from '@/components/CartContext';
 import { Helmet } from 'react-helmet';
-import { createGlobalStyle } from 'styled-components';
+import GlobalStyles from '@/components/GlobalStyles';
 
-const GlobalStyles = createGlobalStyle`
-  body {
-    background-color: #eee;
-    padding: 0;
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-  }
-`;
+
 
 const theme = {
   // Add your theme properties here

@@ -9,6 +9,7 @@ const StyledProductsGrid = styled.div`
   gap: 10px;
   @media screen and (min-width: 768px) {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin-top: 30px;
   }
 `;
 

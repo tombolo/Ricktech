@@ -42,7 +42,7 @@ const StyledHeader2 = styled.header`
 
   @media screen and (max-width: 768px) {
     height: 50px;
-    margin-top: -15px;
+    margin-top: -20px;
     width: 100%;
   }
 `;
@@ -767,7 +767,7 @@ export default function Header() {
               onMouseLeave={handleCategoriesLeave}
             >
             <NavLink5 href="#">Categories</NavLink5>
-              {showCategoriesDropdown && (
+              {/*{showCategoriesDropdown && (
                 <DropdownMenu>
                   <DropdownMenu1>
                     <DropdownMenuItem href={"/laptops"}>Laptops</DropdownMenuItem>
@@ -776,7 +776,7 @@ export default function Header() {
                     <DropdownMenuItem href={"/android"}>Android</DropdownMenuItem>
                   </DropdownMenu1>
                 </DropdownMenu>
-              )}
+              )} */}
             </CategoriesLink>
 
               <NavLink href={"/laptops"}>Laptops</NavLink>

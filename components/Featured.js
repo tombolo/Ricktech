@@ -6,6 +6,10 @@ import CartIcon from "@/components/icons/CartIcon";
 import { useContext } from "react";
 import { CartContext } from "@/components/CartContext";
 
+const StyledSection = styled.section`
+  
+`;
+
 const Bg = styled.div`
   background-color: #222;
   color: #fff;

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import GlobalStyles from "@/components/GlobalStyles";
 import Header from "@/components/Header";
 import Featured from "@/components/Featured";
 import { Product } from "@/models/Product";
@@ -9,12 +10,12 @@ import LaptopsCategory from "@/components/LaptopsCategory";
 import RecommendCategory from "@/components/RecommendCategory";
 import AndroidCategory from "@/components/AndroidCategory";
 import IphonesCategory from "@/components/IphonesCategory";
+
 import Service from "@/components/Service";
 import Choose from "@/components/Choose";
 import Footer from "@/components/Footer";
 
 const StyledPage = styled.div`
-width: 100%;
 `;
 
 export default function HomePage({
@@ -27,6 +28,7 @@ export default function HomePage({
 }) {
   return (
     <StyledPage>
+      <GlobalStyles />
       <Header />
       <Featured product={featuredProduct} />
       <NewProducts products={newProducts} />
