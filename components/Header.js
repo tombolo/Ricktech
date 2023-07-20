@@ -44,7 +44,7 @@ const StyledHeader2 = styled.header`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50px;
+    height: 60px;
     margin-top: -20px;
     width: 100%;
   }
