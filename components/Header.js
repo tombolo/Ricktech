@@ -502,20 +502,37 @@ const DiscountTextBold = styled.p`
 const CartIconWrapper = styled.div`
   display: flex;
   align-items: center;
-  height: 25px;
+  height: 22px;
+  padding: 10px;
+  margin-top: -10px;
+
 `;
 
 const CartIconStyled = styled(ShoppingCartIcon)`
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   color: #000080;
-  margin-right: 10px;
+  margin-right: -10px;
 
   @media screen and (max-width: 768px) {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
   }
 `;
+
+const ProductLength = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000080;
+  border-radius: 50%;
+  padding: 2px;
+  height: 15px;
+  width: 15px;
+  margin-top: -20px;
+`;
+
+
 
 const DropdownMenu = styled.div`
   position: absolute;
@@ -754,10 +771,14 @@ export default function Header() {
 
           <StyledNav2 mobileNavActive={mobileNavActive}>
             <NavLink2 href={"/cart"}>
+
               <CartIconWrapper>
                 <CartIconStyled />
-              ({cartProducts.length})
+                <ProductLength>
+                <span style={{ fontSize: '14px', color: 'white' }}>{cartProducts.length}</span>
+              </ProductLength>
               </CartIconWrapper>
+
             </NavLink2>
           </StyledNav2>
           
