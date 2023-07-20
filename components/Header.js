@@ -117,7 +117,7 @@ const SearchContainer1 = styled.div`
   width: 280px;
   border: 1px solid white;
   border-radius: 0px;
-  margin-left: 30px;
+  margin-left: 25px;
 
   @media screen and (max-width: 768px) {
     display: flex;
@@ -406,7 +406,7 @@ const NavButton = styled.button`
   position: relative;
   z-index: 3;
   margin-top: -10px;
-  margin-left: -35px;
+  margin-left: -15px;
 
   @media screen and (min-width: 768px) {
     display: none;
