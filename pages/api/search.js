@@ -14,15 +14,20 @@ export default async function handler(req, res) {
       const client = await MongoClient.connect(uri, connectionOptions);
       const collection = client.db('NEXT-ECOMMERCE').collection('products');
 
-      // Perform the search query on the desired fields
-      const results = await collection
-        .find({
-          $or: [
-            { title: { $regex: query, $options: 'i' } },
-            { description: { $regex: query, $options: 'i' } },
-          ],
-        })
-        ;
+      // Perform the search using MongoDB Atlas Search
+      const results = await collection.aggregate([
+        {
+          $search: {
+            index: 'Mumo',
+            text: {
+              query: query,
+              path: {
+                wildcard: '*',
+              },
+            },
+          },
+        },
+      ]).toArray();
 
       client.close();
 
@@ -35,4 +40,3 @@ export default async function handler(req, res) {
     res.status(405).json({ message: 'Method not allowed.' });
   }
 }
-

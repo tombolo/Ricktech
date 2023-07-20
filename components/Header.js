@@ -121,7 +121,7 @@ const SearchContainer1 = styled.div`
   margin-top: -55px;
   width: 300px;
   border: 1px solid white;
-  border-radius: 0px;
+  margin-left: 10px;
   
 
   @media screen and (max-width: 768px) {
@@ -413,7 +413,7 @@ const NavButton = styled.button`
   position: relative;
   z-index: 3;
   margin-top: -15px;
-  margin-left: -38px;
+  margin-left: -34px;
   
 
   @media screen and (min-width: 768px) {

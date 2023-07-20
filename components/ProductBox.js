@@ -157,8 +157,8 @@ export default function ProductBox({ _id, title, description, price, images, han
 
   return (
     <ProductWrapperHover>
-      <WishlistIcon className="wishlist-icon" /> {/* Heart icon */}
-      <ExchangeIcon className="exchange-icon" />
+      <WishlistIcon href="#" className="wishlist-icon" /> {/* Heart icon */}
+      <ExchangeIcon href="#" className="exchange-icon" />
       <WhiteBox href={url}>
         <div>
           <img src={images?.[0]} alt="" />
