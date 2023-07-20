@@ -26,9 +26,7 @@ export default class MyDocument extends Document {
                 body {
                   margin-top: 0px; 
                 }
-                .grid-container {
-                  padding-top: 150px; 
-                }
+                
               `}
             </style>
           </>

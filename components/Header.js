@@ -212,7 +212,7 @@ const StyledNav2 = styled.nav`
 
   @media screen and (max-width: 768px) {
     top: 22px;
-    padding-right: 0px;
+    padding-right: 20px;
   }
 `;
 
@@ -393,7 +393,7 @@ const NavLink2 = styled(Link)`
     display: flex;
     color: #000080;
     font-size: 17px;
-    padding: 0px 10px;
+    padding: 0px;
     
   }
 `;

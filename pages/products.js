@@ -1,115 +1,33 @@
-import Header from "@/components/Header";
 import styled from "styled-components";
+import Header from "@/components/Header";
 import Center from "@/components/Center";
 import { useState } from "react";
-import { useRouter } from 'next/router';
-import {mongooseConnect} from "@/lib/mongoose";
-import {Product} from "@/models/Product";
+import { useRouter } from "next/router";
+import { mongooseConnect } from "@/lib/mongoose";
+import { Product } from "@/models/Product";
 import ProductsGrid from "@/components/ProductsGrid";
 import Title from "@/components/Title";
 import Footer from "@/components/Footer";
 import Spinner from "@/components/Spinner";
-
+import ProductSorting from "@/components/ProductSorting"; // Import the ProductSorting component
 
 const StyledSection = styled.section`
-
- 
+  width: 100%;
   
 `;
+
 const GridContainer = styled.div`
   padding-top: 150px;
   padding-bottom: 30px;
-  
-
-`;
-
-const SortOption = styled.div`
-display: flex;
-flex-direction: flex-row;
-padding: 2px;
-
-@media screen and (max-width: 768px) {
-  margin-right: 10px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-}
-@media screen and (min-width: 768px) {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-right: 15px;
-  
-}
-
-span {
-  font-size: 14px;
-}
-`;
-
-const SortingDiv = styled.div`
-  display: flex;
-  background-color: white;
-  padding: 10px;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  box-shadow: 0 3px 6px black;
-  flex-direction: flex-row;
-  margin-top: 0px;
+  margin-left: 10px;
 
   @media screen and (max-width: 768px) {
-    margin-top: 0px;
-    height: 200px;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  
-`;
-
-const SortDiv = styled.div`
-  display: flex;
-  flex-direction: flex-row;
-  justify-content: space-between;
-
-
-  @media screen and (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-  }
-`;
-
-const PriceRangeDropdown = styled.select`
-  font-size: 12px;
-  background-color: white;
-  border-radius: 2px;
-  outline: none;
-  cursor: pointer;
-  padding: 3px;
-  margin: 2px;
-
-  @media screen and (max-width: 768px) {
-    
-`;
-const ApplySortingButton = styled.button`
-  background-color: #000080;
-  color: white;
-  border: none;
-
-  &:hover {
-    background-color: blue;
-  }
-
-  @media screen and (max-width: 768px) {
-    padding: 6px;
-    border-radius: 4px;
+    padding-top: 120px;
   }
 `;
 
 export default function ProductsPage({ products: initialProducts }) {
-
-  const router = useRouter(); 
+  const router = useRouter();
   const [sortBy, setSortBy] = useState(""); // Add state for sorting option
   const [selectedPriceRange, setSelectedPriceRange] = useState(null);
   const [products, setProducts] = useState(initialProducts);
@@ -159,67 +77,33 @@ export default function ProductsPage({ products: initialProducts }) {
 
   return (
     <>
-     <StyledSection>
-      <Header />
+      <StyledSection>
+        <Header />
       </StyledSection>
-       <Center>
-        <GridContainer>
-        <SortingDiv>
-            <SortDiv>
-              <SortOption>
-                <span>Select Price Range</span>
-                <PriceRangeDropdown onChange={handlePriceRangeSelection}>
-                  <option value="1000000">All Products</option>
-                  <option value="20000">Below 20,000</option>
-                  <option value="50000">Below 50,000</option>
-                  <option value="75000">Below 75,000</option>
-                  <option value="1000000">Below 100,000</option>
-                </PriceRangeDropdown>
-              </SortOption>
-              <SortOption>
-                <span>Select Favourate color</span>
-                <PriceRangeDropdown onChange={handlePriceRangeSelection}>
-                  <option value="1000000">All Products</option>
-                  <option value="20000">Blue</option>
-                  <option value="50000">Black</option>
-                  <option value="75000">White</option>
-                  <option value="1000000">Gray</option>
-                </PriceRangeDropdown>
-              </SortOption>
-              <SortOption>
-                <span>Select Phone type</span>
-                <PriceRangeDropdown onChange={handlePriceRangeSelection}>
-                  <option value="1000000">All Products</option>
-                  <option value="20000">Techno</option>
-                  <option value="50000">Oppo</option>
-                  <option value="75000">Samsung</option>
-                  <option value="1000000">Itel</option>
-                </PriceRangeDropdown>
-              </SortOption>
-              
-            </SortDiv>
-            <ApplySortingButton onClick={applySorting}>Apply Sorting</ApplySortingButton>
-          </SortingDiv>
-          {loading ? (
-            <Spinner />
-          ) : (
-            <ProductsGrid products={products} />
-          )}
-        </GridContainer>
-       </Center>
-       <Footer />
     
+        <GridContainer>
+          <ProductSorting
+            sortBy={sortBy}
+            setSortBy={setSortBy}
+            selectedPriceRange={selectedPriceRange}
+            setSelectedPriceRange={setSelectedPriceRange}
+            handlePriceRangeSelection={handlePriceRangeSelection}
+            applySorting={applySorting}
+          />
+          {loading ? <Spinner /> : <ProductsGrid products={products} />}
+        </GridContainer>
       
+      <Footer />
     </>
   );
 }
 
 export async function getServerSideProps() {
   await mongooseConnect();
-  const products = await Product.find({}, null, {sort:{'_id':-1}});
+  const products = await Product.find({}, null, { sort: { '_id': -1 } });
   return {
-    props:{
+    props: {
       products: JSON.parse(JSON.stringify(products)),
-    }
+    },
   };
 }

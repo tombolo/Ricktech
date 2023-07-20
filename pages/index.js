@@ -4,6 +4,7 @@ import GlobalStyles from "@/components/GlobalStyles";
 import Header from "@/components/Header";
 import Featured from "@/components/Featured";
 import { Product } from "@/models/Product";
+import { Category } from "@/models/Category";
 import { mongooseConnect } from "@/lib/mongoose";
 import NewProducts from "@/components/NewProducts";
 import LaptopsCategory from "@/components/LaptopsCategory";
@@ -54,12 +55,15 @@ export async function getServerSideProps() {
     sort: { _id: -1 },
     limit: 36,
   });
-  const laptopsCategory = await Product.find({
-    category: { $in: "64b053bb79f3f697eed78063" },
-  });
-  const recommendCategory = await Product.find({
-    category: { $in: "64b08e6e79f3f697eed7808d" },  
-  });
+  
+
+  const laptops = await Category.findOne({ name: 'Laptops' });
+  const laptopsCategory= await Product.find({ category: laptops._id });
+
+  const recommendations = await Category.findOne({ name: 'Recommendations' });
+  const recommendCategory= await Product.find({ category: recommendations._id });
+
+
 
   const androidCategory = await Product.find({
     category: { $in: "64b1d7eeb49aa244001dd3a0" },

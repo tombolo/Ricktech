@@ -12,6 +12,7 @@ import Footer from "@/components/Footer";
 import mongoose from "mongoose";
 import Spinner from "@/components/Spinner";
 import { FaArrowRight } from 'react-icons/fa';
+import ProductSorting from "@/components/ProductSorting"; 
 
 
 
@@ -22,118 +23,13 @@ const StyledSection = styled.section`
 `;
 
 const GridContainer = styled.div`
-  display: flex;
-  flex-direction: column; // Change the flex direction to column
-  margin-top: 0px;
   padding-top: 150px;
   padding-bottom: 30px;
-`;
-
-const SortingDiv = styled.div`
-  display: flex;
-  background-color: white;
-  padding: 10px;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  box-shadow: 0 3px 6px black;
-  flex-direction: flex-row;
-
+  margin-left: 10px;
   @media screen and (max-width: 768px) {
-    margin-top: 0px;
-    height: 170px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  
-`;
-
-const SortDiv = styled.div`
-  display: flex;
-  flex-direction: flex-row;
-  justify-content: space-between;
-
-
-  @media screen and (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
+    padding-top: 120px;
   }
 `;
-
-const SortOption = styled.div`
-display: flex;
-flex-direction: flex-row;
-padding: 2px;
-
-@media screen and (max-width: 768px) {
-  margin-right: 10px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-}
-@media screen and (min-width: 768px) {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-right: 15px;
-  
-}
-
-span {
-  font-size: 14px;
-}
-`;
-
-const PriceRangeDropdown = styled.select`
-  font-size: 12px;
-  background-color: white;
-  border-radius: 2px;
-  outline: none;
-  cursor: pointer;
-  padding: 3px;
-  margin: 2px;
-
-  @media screen and (max-width: 768px) {
-    
-`;
-
-const Breadcrumb = styled.nav`
-  margin-bottom: 10px;
-  font-size: 12px;
-  color: grey;
-
-  > span {
-    margin-right: 5px;
-  }
-
-  > span:last-child {
-    font-weight: bold;
-  }
-
-  @media screen and (max-width: 768px) {
-    margin-top: -30px;
-  }
-`;
-
-const GreaterThanSymbol = styled(FaArrowRight)`
-  color: red;
-`;
-
-const ApplySortingButton = styled.button`
-  background-color: #000080;
-  color: white;
-  border: none;
-
-  &:hover {
-    background-color: blue;
-  }
-
-  @media screen and (max-width: 768px) {
-    padding: 4px;
-  }
-`;
-
-
 
 
 export default function AndroidPage({ products: initialProducts }) {
@@ -209,52 +105,18 @@ export default function AndroidPage({ products: initialProducts }) {
       <StyledSection>
         <Header />
       </StyledSection>
-      <Center>
-        <GridContainer>
-          {generateBreadcrumb()}
-          <SortingDiv>
-            <SortDiv>
-              <SortOption>
-                <span>Select Price Range</span>
-                <PriceRangeDropdown onChange={handlePriceRangeSelection}>
-                  <option value="1000000">All Products</option>
-                  <option value="20000">Below 20,000</option>
-                  <option value="50000">Below 50,000</option>
-                  <option value="75000">Below 75,000</option>
-                  <option value="1000000">Below 100,000</option>
-                </PriceRangeDropdown>
-              </SortOption>
-              <SortOption>
-                <span>Select Favourate color</span>
-                <PriceRangeDropdown onChange={handlePriceRangeSelection}>
-                  <option value="1000000">All Products</option>
-                  <option value="20000">Blue</option>
-                  <option value="50000">Black</option>
-                  <option value="75000">White</option>
-                  <option value="1000000">Gray</option>
-                </PriceRangeDropdown>
-              </SortOption>
-              <SortOption>
-                <span>Select Phone type</span>
-                <PriceRangeDropdown onChange={handlePriceRangeSelection}>
-                  <option value="1000000">All Products</option>
-                  <option value="20000">Techno</option>
-                  <option value="50000">Oppo</option>
-                  <option value="75000">Samsung</option>
-                  <option value="1000000">Itel</option>
-                </PriceRangeDropdown>
-              </SortOption>
-              
-            </SortDiv>
-            <ApplySortingButton onClick={applySorting}>Apply Sorting</ApplySortingButton>
-          </SortingDiv>
-          {loading ? (
-            <Spinner />
-          ) : (
-            <ProductsGrid products={products} />
-          )}
+      <GridContainer>
+          <ProductSorting
+            sortBy={sortBy}
+            setSortBy={setSortBy}
+            selectedPriceRange={selectedPriceRange}
+            setSelectedPriceRange={setSelectedPriceRange}
+            handlePriceRangeSelection={handlePriceRangeSelection}
+            applySorting={applySorting}
+          />
+          {loading ? <Spinner /> : <ProductsGrid products={products} />}
         </GridContainer>
-      </Center>
+    
       <Footer />
     </>
   );
