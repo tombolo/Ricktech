@@ -41,6 +41,9 @@ const StyledHeader2 = styled.header`
   z-index: 20;
 
   @media screen and (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 50px;
     margin-top: -20px;
     width: 100%;
@@ -114,15 +117,17 @@ const SearchContainer = styled.div`
 const SearchContainer1 = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-top: -55px;
-  display: flex;
-  width: 280px;
+  width: 300px;
   border: 1px solid white;
   border-radius: 0px;
-  margin-left: 20px;
+  
 
   @media screen and (max-width: 768px) {
     display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   @media screen and (min-width: 768px) {
@@ -142,7 +147,7 @@ const SearchBar = styled.input`
 
 const SearchBar1 = styled.input`
   display: flex;
-  width: 230px;
+  width: 255px;
   height: 20px;
   outline: none;
   border: none;
@@ -407,8 +412,9 @@ const NavButton = styled.button`
   cursor: pointer;
   position: relative;
   z-index: 3;
-  margin-top: -10px;
-  margin-left: -15px;
+  margin-top: -15px;
+  margin-left: -38px;
+  
 
   @media screen and (min-width: 768px) {
     display: none;
