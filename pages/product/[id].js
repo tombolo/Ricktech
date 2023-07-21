@@ -42,8 +42,8 @@ const ColWrapper = styled.div`
   margin-left: 15px;
   margin-right: 15px;
   @media screen and (max-width: 768px) {
+    margin-left: 20px;
     margin-right: 10px;
-    margin-left: 15px;
   }
 `;
 
@@ -88,10 +88,8 @@ const AdditionalInfo = styled.div`
   margin-left: 15px;
   margin-right: 15px;
   @media screen and (max-width: 768px) {
-    background-color: #eee;
-    padding: 8px;
+    padding: 10px;
     margin-right: 5px;
-    margin-left: 5px;
     border: 1px solid #ccc;
   }
 
@@ -100,6 +98,12 @@ const AdditionalInfo = styled.div`
     line-height: 1.5;
     color: #333;
     margin-bottom: 10px;
+    @media screen and (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
   }
 `;
 
