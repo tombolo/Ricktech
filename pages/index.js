@@ -40,6 +40,7 @@ export default function HomePage({
       <Choose />
       <AndroidCategory products={androidCategory} />
       <IphonesCategory products={iphonesCategory} />
+      <Choose />
       <LaptopsCategory products={laptopsCategory} />
       
       <Footer />
