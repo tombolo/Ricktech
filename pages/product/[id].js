@@ -16,6 +16,7 @@ import Footer from "@/components/Footer";
 
 const ColWrapper = styled.div`
   background-color: white;
+  
  
   display: grid;
   grid-template-columns: 1fr;
@@ -35,7 +36,7 @@ const ColWrapper = styled.div`
   margin-left: 15px;
   margin-right: 15px;
   @media screen and (max-width: 768px) {
-    margin-right: 8px;
+    margin-right: 30px;
   }
 `;
 
@@ -143,11 +144,11 @@ const QuantityText = styled.span`
 
 const AddToCartButton = styled.button`
   background-color: #000080;
-  width: 200px;
+  width: 160px;
   height: 30px;
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 8px;
   font-size: 1rem;
   border-radius: 5px;
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
