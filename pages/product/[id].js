@@ -35,14 +35,15 @@ const ColWrapper = styled.div`
     justify-content: center;
     background-color: #eee;
     gap: 10px;
+    padding-top: 100px;
 
   }
   gap: 40px;
-  margin: 0px;
   margin-left: 15px;
   margin-right: 15px;
   @media screen and (max-width: 768px) {
-    margin-right: 15px;
+    margin-right: 10px;
+    margin-left: 15px;
   }
 `;
 
