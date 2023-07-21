@@ -28,6 +28,7 @@ const ColWrapper = styled.div`
 
   @media screen and (max-width: 768px) {
     background-color: #eee;
+    gap: 10px;
   }
   gap: 40px;
   margin: 0px;
@@ -39,6 +40,7 @@ const ColWrapper = styled.div`
 `;
 
 const ProductImagesContainer = styled.div`
+  background-color: white;
   padding: 10px;
   margin: 20px;
   border: 1px solid #ccc;
