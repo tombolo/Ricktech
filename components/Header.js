@@ -526,10 +526,10 @@ const ProductLength = styled.div`
   justify-content: center;
   background-color: #000080;
   border-radius: 50%;
-  padding: 2px;
+  padding: 0px;
   height: 15px;
   width: 15px;
-  margin-top: -20px;
+  margin-top: -22px;
 `;
 
 
@@ -775,7 +775,7 @@ export default function Header() {
               <CartIconWrapper>
                 <CartIconStyled />
                 <ProductLength>
-                <span style={{ fontSize: '14px', color: 'white' }}>{cartProducts.length}</span>
+                <span style={{ fontSize: '11px', color: 'white' }}>{cartProducts.length}</span>
               </ProductLength>
               </CartIconWrapper>
 
