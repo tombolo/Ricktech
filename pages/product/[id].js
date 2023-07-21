@@ -81,13 +81,14 @@ const AdditionalInfo = styled.div`
   margin-right: 15px;
   @media screen and (max-width: 768px) {
     background-color: #eee;
-    padding: 0px;
-    margin-right: 8px;
+    padding: 8px;
+    margin-right: 5px;
+    margin-left: 5px;
     border: 1px solid #ccc;
   }
 
   p {
-    font-size: 0.8rem;
+    font-size: 12px;
     line-height: 1.5;
     color: #333;
     margin-bottom: 10px;
