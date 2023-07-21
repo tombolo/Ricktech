@@ -16,6 +16,7 @@ import Footer from "@/components/Footer";
 
 const ColWrapper = styled.div`
   background-color: white;
+ 
   display: grid;
   grid-template-columns: 1fr;
   padding-top: 140px;
@@ -30,6 +31,21 @@ const ColWrapper = styled.div`
   }
   gap: 40px;
   margin: 0px;
+  margin-left: 15px;
+  margin-right: 15px;
+  @media screen and (max-width: 768px) {
+    margin-right: 8px;
+  }
+`;
+
+const ProductImagesContainer = styled.div`
+  padding: 10px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  @media screen and (max-width: 768px) {
+    margin: 0px;
+    border: 1px solid #ccc;
 `;
 
 const PriceRow = styled.div`
@@ -43,9 +59,14 @@ const Price = styled.span`
 `;
 
 const Description = styled.p`
-  font-size: 0.8rem;
+  font-size: 12px;
   line-height: 1.5;
   color: black;
+  padding-right: 10px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 const AdditionalInfo = styled.div`
@@ -54,6 +75,11 @@ const AdditionalInfo = styled.div`
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+  @media screen and (max-width: 768px) {
+    margin-right: 8px;
+  }
 
   p {
     font-size: 0.8rem;
@@ -77,6 +103,11 @@ const BrandInfo = styled.div`
 const ProductsWrapper = styled.div`
   margin-top: 30px;
   margin-bottom: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
+  @media screen and (max-width: 768px) {
+    margin-right: 8px;
+  }
 `;
 
 const QuantityWrapper = styled.div`
@@ -176,11 +207,11 @@ export default function ProductPage({ product, androidProducts }) {
   return (
     <>
       <Header />
-      <Center>
+    
         <ColWrapper>
-          <WhiteBox>
+        <ProductImagesContainer>
             <ProductImages key={currentProduct._id} images={currentProduct.images} />
-          </WhiteBox>
+        </ProductImagesContainer>
           <div>
             <Title>{currentProduct.title}</Title>
             <Description>{currentProduct.description}</Description>
@@ -252,7 +283,7 @@ export default function ProductPage({ product, androidProducts }) {
           <Title>Also From The Store</Title>
           <ProductsGrid products={androidProducts} handleProductChange={handleProductChange} />
         </ProductsWrapper>
-      </Center>
+
       <Footer />
     </>
   );
