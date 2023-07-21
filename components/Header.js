@@ -194,7 +194,7 @@ const StyledNav = styled.nav`
   position: fixed;
   top: 70px;
   bottom: 0;
-  left: -50px;
+  left: 0;
   right: 0;
   padding: ;
 
