@@ -55,10 +55,10 @@ const PriceRangeDropdown = styled.select`
   outline: none;
   cursor: pointer;
   padding: 5px;
-  width: 320px;
+  width: 300px;
 
   @media screen and (min-width: 768px) {
-    width: 110px;
+    width: 170px;
   }
 `;
 

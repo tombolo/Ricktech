@@ -39,10 +39,8 @@ const StyledHeader2 = styled.header`
   width: 100%;
   box-shadow: 0 3px 6px white;
   z-index: 20;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+
+  
 
   @media screen and (max-width: 768px) {
     display: flex;
@@ -187,7 +185,6 @@ const StyledNav = styled.nav`
       ? `
     display: block;
     width: 100%;
-    margin-left: px;
     margin-top: 50px;
   `
       : `
@@ -197,7 +194,7 @@ const StyledNav = styled.nav`
   position: fixed;
   top: 70px;
   bottom: 0;
-  left: 0;
+  left: -50px;
   right: 0;
   padding: ;
 
