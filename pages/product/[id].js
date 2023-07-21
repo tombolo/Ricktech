@@ -73,7 +73,7 @@ const Description = styled.p`
 
 const AdditionalInfo = styled.div`
   background-color: white;
-  padding: 20px;
+  padding: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
