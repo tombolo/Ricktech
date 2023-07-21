@@ -417,7 +417,7 @@ const NavButton = styled.button`
   position: relative;
   z-index: 3;
   margin-top: -15px;
-  margin-left: -50px;
+  margin-left: -30px;
   
 
   @media screen and (min-width: 768px) {
