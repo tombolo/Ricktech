@@ -19,7 +19,7 @@ const ColWrapper = styled.div`
  
   display: grid;
   grid-template-columns: 1fr;
-  padding-top: 140px;
+  padding-top: 130px;
   paddig: 20px;
   padding-bottom: 10px;
   @media screen and (min-width: 768px) {
