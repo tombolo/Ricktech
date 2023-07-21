@@ -58,7 +58,7 @@ const PriceRangeDropdown = styled.select`
   width: 320px;
 
   @media screen and (min-width: 768px) {
-    width: 150px;
+    width: 110px;
   }
 `;
 
