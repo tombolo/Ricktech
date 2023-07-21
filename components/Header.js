@@ -791,30 +791,13 @@ export default function Header() {
             <StyledNav mobileNavActive={mobileNavActive}>
               <NavLink href={"/"}>Home</NavLink>
               <NavLink href={"/products"}>All products</NavLink>
-
-              <CategoriesLink
-              onMouseEnter={handleCategoriesHover}
-              onMouseLeave={handleCategoriesLeave}
-            >
-            <NavLink5 href="#">Categories</NavLink5>
-              {/*{showCategoriesDropdown && (
-                <DropdownMenu>
-                  <DropdownMenu1>
-                    <DropdownMenuItem href={"/laptops"}>Laptops</DropdownMenuItem>
-                    <DropdownMenuItem href={"/macbook"}>MacBook</DropdownMenuItem>
-                    <DropdownMenuItem href={"/iphones"}>Iphones</DropdownMenuItem>
-                    <DropdownMenuItem href={"/android"}>Android</DropdownMenuItem>
-                  </DropdownMenu1>
-                </DropdownMenu>
-              )} */}
-            </CategoriesLink>
-
+              <NavLink href="#">Categories</NavLink>
               <NavLink href={"/laptops"}>Laptops</NavLink>
               <NavLink href={"/macbook"}>MacBook</NavLink>
               <NavLink href={"/iphones"}>Iphones</NavLink>
               <NavLink href={"/android"}>Android</NavLink>
-              <NavLink href={"/account"}>Account</NavLink>
-              <NavLink href={"/account"}>About Us</NavLink>
+              <NavLink href={"#"}>Account</NavLink>
+              <NavLink href={"#"}>About Us</NavLink>
             </StyledNav>
             <NavButton onClick={() => setMobileNavActive(prev => !prev)}>
             <BarsIcon />

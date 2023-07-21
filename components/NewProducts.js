@@ -3,6 +3,7 @@ import Center from "@/components/Center";
 import ProductsGrid from "@/components/ProductsGrid";
 
 
+
 const StyledSection = styled.section`
   padding-top: 0px;
   padding-bottom: 0px;
