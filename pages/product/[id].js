@@ -16,6 +16,7 @@ import Footer from "@/components/Footer";
 
 const ColWrapper = styled.div`
   background-color: white;
+
   
  
   display: grid;
@@ -28,15 +29,20 @@ const ColWrapper = styled.div`
   }
 
   @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: #eee;
     gap: 10px;
+
   }
   gap: 40px;
   margin: 0px;
   margin-left: 15px;
   margin-right: 15px;
   @media screen and (max-width: 768px) {
-    margin-right: 30px;
+    margin-right: 15px;
   }
 `;
 
@@ -47,7 +53,7 @@ const ProductImagesContainer = styled.div`
   border: 1px solid #ccc;
   border-radius: 5px;
   @media screen and (max-width: 768px) {
-    margin: 0px;
+    width: 100%;
     border: 1px solid #ccc;
 `;
 
