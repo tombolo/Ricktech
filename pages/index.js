@@ -15,6 +15,7 @@ import IphonesCategory from "@/components/IphonesCategory";
 import Service from "@/components/Service";
 import Choose from "@/components/Choose";
 import Footer from "@/components/Footer";
+import DownMenu from "@/components/DownMenu";
 
 const StyledPage = styled.div`
 `;
@@ -42,6 +43,7 @@ export default function HomePage({
       <LaptopsCategory products={laptopsCategory} />
       
       <Footer />
+      <DownMenu />
       </StyledPage>
     
   );
