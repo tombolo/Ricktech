@@ -37,10 +37,10 @@ export default function HomePage({
       <Service />
       <RecommendCategory products={recommendCategory} />
       
-      <Choose />
+    
       <AndroidCategory products={androidCategory} />
       <IphonesCategory products={iphonesCategory} />
-      <Choose />
+      
       <LaptopsCategory products={laptopsCategory} />
       
       <Footer />
