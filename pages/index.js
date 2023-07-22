@@ -44,7 +44,6 @@ export default function HomePage({
       <LaptopsCategory products={laptopsCategory} />
       
       <Footer />
-      <DownMenu />
       </StyledPage>
     
   );
