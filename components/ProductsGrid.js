@@ -8,16 +8,12 @@ const StyledProductsGrid = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 10px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     margin-top: 20px;
     gap: 15px;
   }
-  @media screen and (max-width: 768px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
+  
 `;
 
 const PaginationContainer = styled.div`
