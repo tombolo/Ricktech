@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 const StyledPage = styled.div`
   padding-top: 140px;
   @media screen and (max-width: 768px) {
-    padding-top: 110;
+    padding-top: 100px;
   }
 `;
 
@@ -84,7 +84,7 @@ const ContactInfo = styled(Container)`
     flex-direction: column;
     align-items: center;
     margin-left: 5px; 
-    margin-right: 0px;
+    margin-top: -30px;
   }
 
   .title {
@@ -119,11 +119,13 @@ const ContactForm = styled(Container)`
   margin: 20px;
   background-color: #000080;
   @media screen and (max-width: 768px) {
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 10px; 
+    margin-left: 15px; 
     margin-right: 0px; 
+    margin-top: -18px;
   }
 `;
 
