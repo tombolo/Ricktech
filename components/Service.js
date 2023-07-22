@@ -17,6 +17,13 @@ const StyledSection = styled.section`
     margin-left: 7px;
     margin-right: 0px;
   }
+  @media screen and (min-width: 768px) {
+    flex-wrap: wrap;
+    margin-left: 0px;
+    margin-right: 0px;
+    max-width: 1200px;
+    height: 100px;
+  }
 `;
 
 const IconsContainer = styled.div`

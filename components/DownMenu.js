@@ -18,6 +18,7 @@ const StyledNav = styled.nav`
     width: 100%;
     margin-left: px;
     margin-top: 0px;
+    z-index: 9999;
   `
       : `
     display: none;
