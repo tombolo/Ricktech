@@ -4,6 +4,9 @@ import styled from "styled-components";
 import { FaHeart, FaExchangeAlt, FaBars, FaUser } from "react-icons/fa";
 
 const StyledSection = styled.section`
+@media screen and (min-width: 768px) {
+  display: none;
+}
 
 `;
 
