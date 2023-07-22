@@ -238,7 +238,7 @@ function Contact() {
               <div className="title">Contact Information</div>
               <div className="info">
                 <FaEnvelope className="icon" />
-                <p className="text"><strong>Email:</strong> sales@rubytech.co.ke</p>
+                <p className="text"><strong>Email:</strong> sales@ricktech.co.ke</p>
               </div>
               <div className="info">
                 <FaPhoneAlt className="icon" />
