@@ -4,7 +4,10 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const StyledPage = styled.div`
-  padding-top: 110px;
+  padding-top: 140px;
+  @media screen and (max-width: 768px) {
+    padding-top: 110;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -21,7 +24,7 @@ const CenteredContainer = styled.div`
   display: flex;
   flex-direction: row;
   margin: 10px auto; 
-  width: 100%;
+  width: 97%;
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -32,7 +35,7 @@ const CenteredContainer = styled.div`
 
 const Container = styled.div`
   background-color: green;
-  width: 97%;
+  width: 90%;
   border-radius: 8px;
   padding: 10px;
   @media screen and (max-width: 768px) {
@@ -43,13 +46,15 @@ const Container = styled.div`
 const Location = styled(Container)`
   background-color: white;
   width: 95%;
-  margin-left: 10px;
+  margin: 20px;
 
   @media screen and (max-width: 768px) {
+    width: 90%;
     display: flex;
     flex-direction: column;
-    margin-left: 2px; 
-    margin-right: 10px; 
+    align-items: center;
+    margin-left: 5px; 
+    margin-right: 0px;
   }
 `;
 
@@ -72,12 +77,14 @@ const ContactInfo = styled(Container)`
   background-color: white;
   width: 95%;
   height: 300px;
-  margin-right: 5px; 
+  margin: 20px; 
   @media screen and (max-width: 768px) {
+    width: 90%;
     display: flex;
     flex-direction: column;
-    margin-left: 2px; 
-    margin-right: 10px;  
+    align-items: center;
+    margin-left: 5px; 
+    margin-right: 0px;
   }
 
   .title {
@@ -110,13 +117,13 @@ const ContactInfo = styled(Container)`
 const ContactForm = styled(Container)`
   width: 95%;
   margin: 20px;
-  background-color: white;
+  background-color: #000080;
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: 10px; 
-    margin-right: 30px; 
+    margin-right: 0px; 
   }
 `;
 
