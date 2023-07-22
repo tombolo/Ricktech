@@ -12,8 +12,7 @@ import Spinner from "@/components/Spinner";
 import ProductSorting from "@/components/ProductSorting"; // Import the ProductSorting component
 
 const StyledSection = styled.section`
-  width: 100%;
-  
+
 `;
 
 const GridContainer = styled.div`
