@@ -798,7 +798,7 @@ export default function Header() {
               <NavLink href={"/iphones"}>Iphones</NavLink>
               <NavLink href={"/android"}>Android</NavLink>
               <NavLink href={"#"}>Account</NavLink>
-              <NavLink href={"#"}>About Us</NavLink>
+              <NavLink href={"/contact"}>About Us</NavLink>
             </StyledNav>
             <NavButton onClick={() => setMobileNavActive(prev => !prev)}>
             <BarsIcon />
