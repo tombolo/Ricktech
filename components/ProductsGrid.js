@@ -13,6 +13,11 @@ const StyledProductsGrid = styled.div`
     margin-top: 20px;
     gap: 15px;
   }
+  @media screen and (max-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
 `;
 
 const PaginationContainer = styled.div`
