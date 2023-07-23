@@ -1,7 +1,8 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { FaHeart, FaExchangeAlt, FaBars, FaUser } from "react-icons/fa";
+import { FaHeart, FaExchangeAlt, FaBars, FaEnvelope } from "react-icons/fa";
+
 
 const StyledSection = styled.section`
 @media screen and (min-width: 768px) {
@@ -83,6 +84,15 @@ const NavLink = styled(Link)`
 
 
 
+const NavLink1 = styled(Link)`
+  position: flex;
+  font-size: 20px;
+  color: #000080;
+  margin-bottom: -4px;
+  
+`;
+
+
 
 const DownWrapper = styled.div`
   background-color: #eee;
@@ -116,13 +126,13 @@ const IconWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3px;
+  padding: 0px;
 `;
 
 const IconTitle = styled.span`
   color: grey;
   font-size: 12px;
-  margin-top: 4px;
+  margin-top: 0px;
 `;
 
 const WishlistIcon = styled(FaHeart)`
@@ -143,7 +153,7 @@ const BarsIcon = styled(FaBars)`
   color: #000080;
 `;
 
-const ProfileIcon = styled(FaUser)`
+const EnvelopeIcon = styled(FaEnvelope)`
   position: flex;
   font-size: 20px;
   color: #000080;
@@ -189,40 +199,49 @@ export default function DownMenu() {
               <NavLink href={"/macbook"}>
                 MacBook
               </NavLink>
-              <NavLink href={"/macbook"}>
+              <NavLink href={"/iphones"}>
                 Iphones
               </NavLink>
-              <NavLink href={"/macbook"}>
+              <NavLink href={"/android"}>
                 Android
               </NavLink>
               <NavLink href={"/macbook"}>
                 Account
               </NavLink>
-              <NavLink href={"/macbook"}>
+              <NavLink href={"/contact"}>
                 About Us
               </NavLink>
     </StyledNav>
     
     <DownWrapper show={showMenu}>
         <IconWrapper>
+        <NavLink1 href="#">
           <BarsIcon onClick={() => setMobileNavActive(prev => !prev)} className="bars-icon" />
+        </NavLink1>
           <IconTitle>Menu</IconTitle>
     </IconWrapper>
 
 
 
         <IconWrapper>
+        <NavLink1 href={"/contact"}>
           <WishlistIcon href="#" className="wishlist-icon" />
+        </NavLink1>
           <IconTitle>Wishlist</IconTitle>
         </IconWrapper>
         <IconWrapper>
+        <NavLink1 href={"/contact"}>
           <ExchangeIcon href="#" className="exchange-icon" />
+        </NavLink1>
           <IconTitle>Compare</IconTitle>
         </IconWrapper>
-        <IconWrapper>
-          <ProfileIcon href="#" className="profile-icon" />
-          <IconTitle>Profile</IconTitle>
-        </IconWrapper>
+      <IconWrapper>
+      <NavLink1 href={"/contact"}>
+          <FaEnvelope className="profile-icon" />
+      </NavLink1>
+      <IconTitle>Contact Us</IconTitle>
+        
+      </IconWrapper>
       </DownWrapper>
 
       </StyledSection>
