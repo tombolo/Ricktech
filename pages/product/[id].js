@@ -25,6 +25,7 @@ const ColWrapper = styled.div`
   paddig: 20px;
   padding-bottom: 10px;
   @media screen and (min-width: 768px) {
+    padding-top: 150px;
     grid-template-columns: 0.8fr 1.2fr;
   }
 
