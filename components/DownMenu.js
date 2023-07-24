@@ -1,46 +1,12 @@
-import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { FaFacebook, FaTwitter, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 
-
 const StyledSection = styled.section`
-@media screen and (min-width: 768px) {
-  display: none;
-}
-
-`;
-
-const StyledNav = styled.nav`
-  ${props =>
-    props.mobileNavActive
-      ? `
-    display: block;
-    width: 100%;
-    margin-left: px;
-    margin-top: 0px;
-    z-index: 9999;
-  `
-      : `
-    display: none;
-  `}
-  gap: 15px;
-  position: fixed;
-  top: 0px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 5px;
-  margin-top: 115px;
-
   @media screen and (min-width: 768px) {
-    display: flex;
-    position: static;
-    padding: 0;
+    display: none;
   }
 `;
-
-
 
 const DownWrapper = styled.div`
   background-color: #eee;
@@ -56,6 +22,7 @@ const DownWrapper = styled.div`
   width: 100%;
   border-top: 1px solid black;
   box-shadow: 0 3px 6px 4px black;
+
   @media screen and (min-width: 768px) {
     display: none;
   }
@@ -110,7 +77,6 @@ const EnvelopeIcon = styled(FaEnvelope)`
 export default function DownMenu() {
   const [showMenu, setShowMenu] = useState(false);
 
-  
   useEffect(() => {
     let prevScrollY = window.pageYOffset;
 
@@ -132,37 +98,37 @@ export default function DownMenu() {
   }, []);
 
   return (
-
     <StyledSection>
-    
-    <DownWrapper show={showMenu}>
-
-      <IconWrapper>
-          <WhatsappIcon className="bars-icon" />
-          <IconTitle>Whatsapp</IconTitle>
-      </IconWrapper>
-
-
+      <DownWrapper show={showMenu}>
+        <IconWrapper>
+          {/* Use anchor tag with "href" to direct users to WhatsApp */}
+          <a href="https://wa.me/254757351475" target="_blank" rel="noopener noreferrer">
+            <WhatsappIcon className="bars-icon" />
+          </a>
+          <IconTitle>WhatsApp</IconTitle>
+        </IconWrapper>
 
         <IconWrapper>
-          <FacebookIcon className="wishlist-icon" />
+          {/* Use anchor tag with "href" to direct users to Facebook */}
+          <a href="https://www.facebook.com/profile.php?id=100087969914159" target="_blank" rel="noopener noreferrer">
+            <FacebookIcon className="wishlist-icon" />
+          </a>
           <IconTitle>Facebook</IconTitle>
         </IconWrapper>
 
-
         <IconWrapper>
-          <TwitterIcon className="exchange-icon" />
+          {/* Use anchor tag with "href" to direct users to Twitter */}
+          <a href="https://twitter.com/tombolo_ke" target="_blank" rel="noopener noreferrer">
+            <TwitterIcon className="exchange-icon" />
+          </a>
           <IconTitle>Twitter</IconTitle>
         </IconWrapper>
 
-
-      <IconWrapper>
+        <IconWrapper>
           <EnvelopeIcon className="profile-icon" />
-          <IconTitle>Contact Us</IconTitle> 
-      </IconWrapper>
-
+          <IconTitle>Contact Us</IconTitle>
+        </IconWrapper>
       </DownWrapper>
-      </StyledSection>
-      
+    </StyledSection>
   );
 }
