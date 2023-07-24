@@ -8,30 +8,80 @@ import axios from "axios";
 import Table from "@/components/Table";
 import Input from "@/components/Input";
 import Footer from "@/components/Footer";
+import { createGlobalStyle } from 'styled-components';
+
+// Rest of the code ...
+
 
 const ColumnsWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 97%;
+  padding: 20px;
   @media screen and (min-width: 768px) {
     grid-template-columns: 1.2fr 0.8fr;
+    justify-content: center; 
+    align-items: center;
+    padding-top: 150px;
+  }
+  @media screen and (max-width: 768px) {
+    padding-top: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   gap: 10px;
-  padding-top: 140px;
+  
   padding-bottom: 50px;
+  
+`;
+
+const GlobalStyles = createGlobalStyle`
+  body, html {
+    margin: 0;
+    padding: 0;
+  }
 `;
 
 const Box = styled.div`
-  background-color: #fff;
+  background-color: #ccc;
   border-radius: 10px;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: stretch;
+  width: 92%;
+  @media screen and (max-width: 768px) {
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+`;
+
+const CartHeading = styled.h2`
+  font-size: 22px;
+  color: #000080;
+  margin-bottom: 10px;
 `;
 
 const ProductInfoCell = styled.td`
   padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 `;
 
 const ProductImageBox = styled.div`
-  width: 70px;
+  width: 100px;
   height: 100px;
   padding: 2px;
   border: 1px solid #000080;
@@ -40,23 +90,27 @@ const ProductImageBox = styled.div`
   justify-content: center;
   border-radius: 10px;
   img {
-    max-width: 60px;
-    max-height: 60px;
+    max-width: 100px;
+    max-height: 100px;
   }
   @media screen and (min-width: 768px) {
-    padding: 10px;
+    padding: 5px;
     width: 100px;
     height: 100px;
     img {
-      max-width: 80px;
-      max-height: 80px;
+      max-width: 100px;
+      max-height: 100px;
+      border-radius: 10px;
     }
   }
 `;
 
 const QuantityLabel = styled.span`
-  padding: 0 15px;
+  padding: 0 8px;
   display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   @media screen and (min-width: 768px) {
     display: inline-block;
     padding: 0 10px;
@@ -68,11 +122,21 @@ const CityHolder = styled.div`
   gap: 5px;
 `;
 
-const FixedOrderBox = styled(Box)`
-  position: ;
-  top: 140px;
-  right: 10px;
-  z-index: 0;
+
+const MinusButton = styled(Button)`
+  background-color: #9c0000;
+  padding: 5px;
+  &:hover {
+    background-color: #ff0000;
+  }
+`;
+
+const PlusButton = styled(Button)`
+  background-color: #007f00;
+  padding: 5px;
+  &:hover {
+    background-color: #00ff00;
+  }
 `;
 
 export default function CartPage() {
@@ -140,25 +204,25 @@ export default function CartPage() {
     return (
       <>
         <Header />
-        <Center>
           <ColumnsWrapper>
             <Box>
               <h1>Thanks for your order!</h1>
               <p>We will email you when your order will be sent.</p>
             </Box>
           </ColumnsWrapper>
-        </Center>
       </>
     );
   }
 
   return (
     <>
+    <GlobalStyles />
       <Header />
-      <Center>
+
+
         <ColumnsWrapper>
           <Box>
-            <h2>Cart</h2>
+          <CartHeading>Cart</CartHeading>
             {!cartProducts?.length && <div>Your cart is empty</div>}
             {products?.length > 0 && (
               <Table>
@@ -179,19 +243,15 @@ export default function CartPage() {
                         {product.title}
                       </ProductInfoCell>
                       <td>
-                        <Button
-                          onClick={() => lessOfThisProduct(product._id)}
-                        >
+                      <MinusButton onClick={() => lessOfThisProduct(product._id)}>
                           -
-                        </Button>
+                        </MinusButton>
                         <QuantityLabel>
-                          {cartProducts.filter((id) => id === product._id).length}
+                        {cartProducts.filter((id) => id === product._id).length}
                         </QuantityLabel>
-                        <Button
-                          onClick={() => moreOfThisProduct(product._id)}
-                        >
+                        <PlusButton onClick={() => moreOfThisProduct(product._id)}>
                           +
-                        </Button>
+                        </PlusButton>
                       </td>
                       <td>
                         KSH
@@ -203,15 +263,15 @@ export default function CartPage() {
                   <tr>
                     <td></td>
                     <td></td>
-                    <td>KSH{total}</td>
+                    <td>KSH {total}</td>
                   </tr>
                 </tbody>
               </Table>
             )}
           </Box>
           {!!cartProducts?.length && (
-            <FixedOrderBox>
-              <h2>Order information</h2>
+            <Box>
+              <CartHeading>Order information</CartHeading>
               <Input
                 type="text"
                 placeholder="Name"
@@ -259,10 +319,9 @@ export default function CartPage() {
               <Button black block onClick={goToPayment}>
                 Continue to payment
               </Button>
-            </FixedOrderBox>
+            </Box>
           )}
         </ColumnsWrapper>
-      </Center>
       <Footer />
     </>
   );
