@@ -39,10 +39,8 @@ const StyledHeader2 = styled.header`
 
   @media screen and (max-width: 768px) {
     display: flex;
-    align-items: center; 
-    justify-content: space-between;
     width: 100%;
-    height: 50px;
+    height: 60px;
     margin-top: -20px;
   }
 `;
@@ -360,7 +358,8 @@ const NavButton = styled.button`
   position: relative;
   z-index: 3;
   margin-top: 0px;
-  margin-right: 10px;
+  margin-right: 20px;
+  margin-left: 5px;
   
 
   @media screen and (min-width: 768px) {
@@ -562,7 +561,7 @@ export default function Header() {
       </Center>
 
       <StyledHeader2>
-        <Center>
+        
           <Wrapper>
             
             <StyledNav mobileNavActive={mobileNavActive}>
@@ -597,8 +596,6 @@ export default function Header() {
           </DiscountImageWrapper>
 
           </Wrapper>
-          </Center>
-
           </StyledHeader2>
       
 

@@ -8,11 +8,11 @@ const SearchBarWrapper = styled.div`
   background-color: #f2f2f2;
   border-radius: 4px;
   padding: 7px;
-  margin-left: 50px;
-  width: 500px;
+  margin-left: 50px; 
+  width: 550px;
 
   @media screen and (max-width: 768px) {
-    width: 300px;
+    max-width: 260px;
   }
 `;
 
