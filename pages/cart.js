@@ -32,6 +32,7 @@ const ColumnsWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 90%;
   }
   gap: 10px;
   
@@ -54,10 +55,9 @@ const Box = styled.div`
   flex-direction: column;
   justify-content: center;
   align-self: stretch;
-  width: 92%;
+  width: 93%;
   @media screen and (max-width: 768px) {
     border-radius: 5px;
-    padding: 20px;
     background-color: #eee;
     display: flex;
     flex-direction: column;
