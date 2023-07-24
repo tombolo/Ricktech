@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { FaHeart, FaExchangeAlt, FaBars, FaEnvelope } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 
 
 const StyledSection = styled.section`
@@ -38,58 +38,6 @@ const StyledNav = styled.nav`
     position: static;
     padding: 0;
   }
-`;
-
-
-const NavLink = styled(Link)`
-  font-size: 14px;
-  display: block;
-  color: white;
-  text-decoration: none;
-  padding: 0px 0;
-
-  @media screen and (min-width: 768px) {
-    &:hover {
-      position: relative;
-      &:after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -10px;
-        width: 100%;
-        height: 3px;
-        background-color: red;
-        transform-origin: center;
-        transform: scaleX(1);
-        transition: width 3s;
-      }
-      color: #3b82f6;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    color: #000080;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border: .5px solid grey;
-    font-size: 14px;
-    font-weight: 520;
-    margin-top: -10px;
-  }
-
-  @media screen and (min-width: 768px) {
-    padding: 0;
-  }
-`;
-
-
-
-const NavLink1 = styled(Link)`
-  position: flex;
-  font-size: 20px;
-  color: #000080;
-  margin-bottom: -4px;
-  
 `;
 
 
@@ -135,19 +83,19 @@ const IconTitle = styled.span`
   margin-top: 0px;
 `;
 
-const WishlistIcon = styled(FaHeart)`
+const TwitterIcon = styled(FaTwitter)`
   position: flex;
   font-size: 20px;
   color: #000080;
 `;
 
-const ExchangeIcon = styled(FaExchangeAlt)`
+const FacebookIcon = styled(FaFacebook)`
   position: flex;
   font-size: 20px;
   color: #000080;
 `;
 
-const BarsIcon = styled(FaBars)`
+const WhatsappIcon = styled(FaWhatsapp)`
   position: flex;
   font-size: 20px;
   color: #000080;
@@ -161,7 +109,6 @@ const EnvelopeIcon = styled(FaEnvelope)`
 
 export default function DownMenu() {
   const [showMenu, setShowMenu] = useState(false);
-  const [mobileNavActive, setMobileNavActive] = useState(false);
 
   
   useEffect(() => {
@@ -187,63 +134,34 @@ export default function DownMenu() {
   return (
 
     <StyledSection>
-
-    <StyledNav mobileNavActive={mobileNavActive}>
-              <NavLink href={"/"}>Home</NavLink>
-              <NavLink href={"/products"}>
-                All products
-              </NavLink>
-              <NavLink href={"/laptops"}>
-                Laptops
-              </NavLink>
-              <NavLink href={"/macbook"}>
-                MacBook
-              </NavLink>
-              <NavLink href={"/iphones"}>
-                Iphones
-              </NavLink>
-              <NavLink href={"/android"}>
-                Android
-              </NavLink>
-              <NavLink href={"/macbook"}>
-                Account
-              </NavLink>
-              <NavLink href={"/contact"}>
-                About Us
-              </NavLink>
-    </StyledNav>
     
     <DownWrapper show={showMenu}>
-        <IconWrapper>
-        <NavLink1 href="#">
-          <BarsIcon onClick={() => setMobileNavActive(prev => !prev)} className="bars-icon" />
-        </NavLink1>
-          <IconTitle>Menu</IconTitle>
-    </IconWrapper>
 
-
-
-        <IconWrapper>
-        <NavLink1 href={"/contact"}>
-          <WishlistIcon href="#" className="wishlist-icon" />
-        </NavLink1>
-          <IconTitle>Wishlist</IconTitle>
-        </IconWrapper>
-        <IconWrapper>
-        <NavLink1 href={"/contact"}>
-          <ExchangeIcon href="#" className="exchange-icon" />
-        </NavLink1>
-          <IconTitle>Compare</IconTitle>
-        </IconWrapper>
       <IconWrapper>
-      <NavLink1 href={"/contact"}>
-          <FaEnvelope className="profile-icon" />
-      </NavLink1>
-      <IconTitle>Contact Us</IconTitle>
-        
+          <WhatsappIcon className="bars-icon" />
+          <IconTitle>Whatsapp</IconTitle>
       </IconWrapper>
-      </DownWrapper>
 
+
+
+        <IconWrapper>
+          <FacebookIcon className="wishlist-icon" />
+          <IconTitle>Facebook</IconTitle>
+        </IconWrapper>
+
+
+        <IconWrapper>
+          <TwitterIcon className="exchange-icon" />
+          <IconTitle>Twitter</IconTitle>
+        </IconWrapper>
+
+
+      <IconWrapper>
+          <EnvelopeIcon className="profile-icon" />
+          <IconTitle>Contact Us</IconTitle> 
+      </IconWrapper>
+
+      </DownWrapper>
       </StyledSection>
       
   );
