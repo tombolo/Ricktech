@@ -7,10 +7,12 @@ const SearchBarWrapper = styled.div`
   align-items: center;
   background-color: #f2f2f2;
   border-radius: 4px;
-  padding: 8px;
+  padding: 7px;
   margin-left: 50px;
+  width: 500px;
+
   @media screen and (max-width: 768px) {
-    display: none;
+    width: 300px;
   }
 `;
 
@@ -23,7 +25,7 @@ const SearchInput = styled.input`
   outline: none;
   background-color: transparent;
   font-size: 16px;
-  width: 470px;
+  width: 100%;
 `;
 
 const SearchBar = ({ searchResults }) => {

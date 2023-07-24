@@ -36,22 +36,17 @@ const StyledHeader = styled.header`
 
 const StyledHeader2 = styled.header`
   background-color: #000080;
-  position: fixed;
-  width: 100%;
-  box-shadow: 0 3px 6px white;
-  z-index: 20;
-
-  
 
   @media screen and (max-width: 768px) {
     display: flex;
+    align-items: center; 
     justify-content: space-between;
-    align-items: center;
-    height: 60px;
-    margin-top: -20px;
     width: 100%;
+    height: 50px;
+    margin-top: -20px;
   }
 `;
+
 
 
 
@@ -102,64 +97,32 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0;
+  padding: 20px 0px;
 `;
 
 
 
-const SearchContainer1 = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: -55px;
-  width: 250px;
-  border: 1px solid white;
-  margin-left: 10px;
-  
 
+
+const SearchContainerMain = styled.div`
   @media screen and (max-width: 768px) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  @media screen and (min-width: 768px) {
     display: none;
   }
 `;
 
-
-
-const SearchBar1 = styled.input`
+const SearchContainer1 = styled.div`
+@media screen and (max-width: 768px) {
   display: flex;
-  width: 250px;
-  height: 20px;
-  outline: none;
-  border: none;
-  padding: 5px;
-  border-radius: 0px;
+  margin-left: -60px;
+}
+@media screen and (min-width: 768px) {
+  display: none;
+}
 `;
 
-const SearchIconWrapper1 = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  padding: 5px;
-  margin-left: 5px;
 
-`;
 
-const SearchIconWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  background-color: #000080;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  padding: 6px;
-  padding-right: 14px;
-  &:hover {
-    background-color: blue;
-  }
-`;
+
 
 
 const StyledNav = styled.nav`
@@ -168,7 +131,7 @@ const StyledNav = styled.nav`
       ? `
     display: block;
     width: 100%;
-    margin-top: 50px;
+    margin-top: 40px;
   `
       : `
     display: none;
@@ -389,15 +352,15 @@ const NavLink2 = styled(Link)`
 
 const NavButton = styled.button`
   background-color: #000080;
-  width: 35px;
-  height: 35px;
+  width: 42px;
+  height: 42px;
   border: 0;
   color: white;
   cursor: pointer;
   position: relative;
   z-index: 3;
-  margin-top: -15px;
-  margin-left: -30px;
+  margin-top: 0px;
+  margin-right: 10px;
   
 
   @media screen and (min-width: 768px) {
@@ -518,110 +481,6 @@ const ProductLength = styled.div`
 
 
 
-const DropdownMenu = styled.div`
-  position: absolute;
-  margin-top: 0px;
-  width: 200px;
-  top: 100%;
-  left: 0;
-  display: none;
-  flex-direction: column;
-  background-color: transparent;
-  padding: 0px;
-  z-index: 30;
-`;
-
-const DropdownMenu1 = styled.div`
-  margin-top: 22px;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  width: 200px;
-  padding: 10px;
-  left: 0;
-  
-`;
-
-const DropdownMenuItem = styled(Link)`
-  font-size: 13px;
-  color: #000080;
-  text-decoration: none;
-  padding: 7px;
-
-  &:hover {
-    color: #3b82f6;
-    background-color: #eee;
-  }
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const CustomerServiceLink = styled.div`
-  position: relative;
-
-  &:hover ${DropdownMenu} {
-    display: flex;
-  }
-  .arrow-icon {
-    position: absolute;
-    top: 50%;
-    width: 20px;
-    height: 20px;
-    color: #000080;
-    margin-left: 110px;
-    transform: translateY(-50%);
-  }
-
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const CategoriesLink = styled.div`
-  position: relative;
-
-  &:hover ${DropdownMenu} {
-    display: flex;
-  }
-  .arrow-icon {
-    position: absolute;
-    top: 50%;
-    width: 20px;
-    height: 20px;
-    color: white;
-    margin-left: 80px;
-    transform: translateY(-50%);
-  }
-
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const SearchResults = styled.div`
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background-color: white;
-  border: 1px solid gray;
-  border-top: none;
-`;
-
-const SearchResultItem = styled.div`
-  padding: 10px;
-  border-bottom: 1px solid gray;
-
-  &:last-child {
-    border-bottom: none;
-  }
-`;
-
-
-
-
-
 
 export default function Header() {
   const { cartProducts } = useContext(CartContext);
@@ -655,12 +514,6 @@ export default function Header() {
 
   const [searchQuery, setSearchQuery] = useState("");
 
-
-  
-
-
-  
-
   return (
 
     <StyledHeader4>
@@ -671,16 +524,7 @@ export default function Header() {
           <div className="email"></div>
         </Center>
       </StyledHeader3>
-
-      
     <StyledHeader>
-
-
-
-
-
-
-
 
       <Center>
         <Wrapper>
@@ -690,7 +534,9 @@ export default function Header() {
   
           </Logo>
           
+          <SearchContainerMain>
           <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+          </SearchContainerMain>
           
 
 
@@ -718,6 +564,7 @@ export default function Header() {
       <StyledHeader2>
         <Center>
           <Wrapper>
+            
             <StyledNav mobileNavActive={mobileNavActive}>
               <NavLink href={"/"}>Home</NavLink>
               <NavLink href={"/products"}>All products</NavLink>
@@ -729,19 +576,16 @@ export default function Header() {
               <NavLink href={"#"}>Account</NavLink>
               <NavLink href={"/contact"}>About Us</NavLink>
             </StyledNav>
+            
             <NavButton onClick={() => setMobileNavActive(prev => !prev)}>
             <BarsIcon />
             </NavButton>
-          </Wrapper>
 
-
-          <SearchContainer1>
-            <SearchBar1 type="text" placeholder="Search for Laptops, Computers, Accessories and Electronic" />
-            <SearchIconWrapper1>
-              <SearchIcon width={20} style={{ color: 'white' }} />
-            </SearchIconWrapper1>
-          </SearchContainer1>
-
+            <SearchContainer1>
+            <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+            </SearchContainer1>
+            
+        
 
           <DiscountImageWrapper>
             <DiscountImageElement src={DiscountImage} alt="Discount" />
@@ -751,9 +595,15 @@ export default function Header() {
             </DiscountInfo>
             <ChevronDownIcon className="arrow-icon" />
           </DiscountImageWrapper>
-          
-        </Center>
-      </StyledHeader2>
+
+          </Wrapper>
+          </Center>
+
+          </StyledHeader2>
+      
+
+
+
     </StyledHeader>
     </StyledHeader4>
   );

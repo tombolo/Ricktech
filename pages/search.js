@@ -16,6 +16,10 @@ const SearchResultsWrapper = styled.div`
   width: 96%;
   margin: 0 auto;
   padding-top: 140px;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 100px;
+  }
 `;
 
 const SearchResultItem = styled.div`
