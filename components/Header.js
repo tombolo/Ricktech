@@ -129,7 +129,7 @@ const StyledNav = styled.nav`
       ? `
     display: block;
     width: 100%;
-    margin-top: 40px;
+    margin-top: 50px;
   `
       : `
     display: none;
@@ -359,7 +359,7 @@ const NavButton = styled.button`
   z-index: 3;
   margin-top: 0px;
   margin-right: 20px;
-  margin-left: 5px;
+  margin-left: 10px;
   
 
   @media screen and (min-width: 768px) {
