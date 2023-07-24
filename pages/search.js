@@ -19,6 +19,7 @@ const SearchResultsWrapper = styled.div`
 
   @media screen and (max-width: 768px) {
     padding-top: 100px;
+    margin: 0 auto;
   }
 `;
 
