@@ -76,8 +76,6 @@ const ProductInfoCell = styled.td`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-
 `;
 
 const ProductImageBox = styled.div`
@@ -92,6 +90,7 @@ const ProductImageBox = styled.div`
   img {
     max-width: 100px;
     max-height: 100px;
+    border-radius: 10px;
   }
   @media screen and (min-width: 768px) {
     padding: 5px;
