@@ -146,6 +146,7 @@ const StyledNav = styled.nav`
     display: flex;
     position: static;
     padding: 0;
+    margin-left: 25px;
   }
 `;
 

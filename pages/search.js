@@ -13,7 +13,7 @@ const SearchResultsWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 96%;
+  width: 100%;
   margin: 0 auto;
   padding-top: 140px;
 
