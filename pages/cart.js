@@ -81,7 +81,7 @@ const ProductInfoCell = styled.td`
 const ProductImageBox = styled.div`
   width: 100px;
   height: 100px;
-  padding: 2px;
+  padding: 0px;
   border: 1px solid #000080;
   display: flex;
   align-items: center;
@@ -93,7 +93,7 @@ const ProductImageBox = styled.div`
     border-radius: 10px;
   }
   @media screen and (min-width: 768px) {
-    padding: 5px;
+    padding: 0px;
     width: 100px;
     height: 100px;
     img {

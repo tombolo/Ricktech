@@ -5,6 +5,7 @@ import { mongooseConnect } from "@/lib/mongoose";
 import { Product } from "@/models/Product";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 const StyledSection = styled.section``;
 
@@ -56,12 +57,6 @@ export default function Search({ searchResults }) {
   const router = useRouter();
   const { q } = router.query;
 
-  // Define a function to handle click on a search result
-  const handleSearchResultClick = (productId) => {
-    // Redirect to the product page (you need to define the route for the product page)
-    router.push(`/products/${productId}`);
-  };
-
   return (
     <>
       <StyledSection>
@@ -69,14 +64,14 @@ export default function Search({ searchResults }) {
       </StyledSection>
 
       <SearchResultsWrapper>
-      <h2 style={{ fontSize: "20px" }}>Search Results for {q}</h2>
+        <h2 style={{ fontSize: "20px" }}>Search Results for {q}</h2>
         {searchResults.length === 0 ? (
           <p>No results found</p>
         ) : (
           searchResults.map((product) => (
             <SearchResultItem
               key={product._id}
-              onClick={() => handleSearchResultClick(product._id)}
+              onClick={() => router.push(`/product/${product._id}`)}
             >
               <Title>{product.title}</Title>
               <Description>{product.description}</Description>
