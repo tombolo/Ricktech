@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 import Center from "@/components/Center";
+import SearchBar from "@/components/SearchBar"
 import { useContext, useState, useRef } from "react";
 import { CartContext } from "@/components/CartContext";
 import BarsIcon from "@/components/icons/Bars";
@@ -104,17 +105,7 @@ const Wrapper = styled.div`
   padding: 20px 0;
 `;
 
-const SearchContainer = styled.div`
-  display: flex;
-  width: 490px;
-  border: 1px solid blue;
-  border-radius: 20px;
-  margin-left: 60px;
 
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`;
 
 const SearchContainer1 = styled.div`
   display: flex;
@@ -137,15 +128,7 @@ const SearchContainer1 = styled.div`
   }
 `;
 
-const SearchBar = styled.input`
-  display: flex;
-  width: 450px;
-  height: 25px;
-  outline: none;
-  border: none;
-  padding: 5px;
-  border-radius: 20px;
-`;
+
 
 const SearchBar1 = styled.input`
   display: flex;
@@ -670,21 +653,10 @@ export default function Header() {
     }, 3000); // Adjust the delay as needed
   };
 
+  const [searchQuery, setSearchQuery] = useState("");
 
 
-  //SEARCH BAR FUNCTIONALITY
-  const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
-
-  const handleSearch = async () => {
-    try {
-      const response = await fetch(`/api/search?query=${searchQuery}`);
-      const data = await response.json();
-      setSearchResults(data.results);
-    } catch (error) {
-      console.error('Error searching THE PRODUCTS:', error);
-    }
-  };
+  
 
 
   
@@ -718,51 +690,8 @@ export default function Header() {
   
           </Logo>
           
-
-          <StyledNav3 mobileNavActive={mobileNavActive}>
-            <CustomerServiceLink
-              onMouseEnter={handleCustomerServiceHover}
-              onMouseLeave={handleCustomerServiceLeave}
-            >
-              <NavLink3 href="#">Customer Service</NavLink3>
-              {showDropdown && (
-                <DropdownMenu>
-                  <DropdownMenu1>
-                  <DropdownMenuItem href="#">Contact Us</DropdownMenuItem>
-                  <DropdownMenuItem href="#">Terms and Conditions</DropdownMenuItem>
-                  <DropdownMenuItem href="#">Returns & Refund Policy</DropdownMenuItem>
-                  <DropdownMenuItem href="#">Iphones TradeIn</DropdownMenuItem>
-                  </DropdownMenu1>
-                </DropdownMenu>
-              )}
-               
-            </CustomerServiceLink>
-          </StyledNav3>
-
-
-          <SearchContainer>
-            <SearchBar type="text" 
-            placeholder="Search for Laptops, Computers, Accessories and Electronic"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)} />
-            <SearchIconWrapper>
-              <SearchIcon onClick={handleSearch} width={20} style={{ color: 'white' }}  />
-            </SearchIconWrapper>
-
-            {searchResults && searchResults.length > 0 && (
-          <SearchResults>
-            {searchResults.map((result) => (
-              <SearchResultItem key={result._id}>
-                <Link href={`/product/${result._id}`}>
-                  <a>{result.title}</a>
-                </Link>
-              </SearchResultItem>
-            ))}
-          </SearchResults>
-        )}
-  
-
-          </SearchContainer>
+          <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+          
 
 
           <StyledNav4 mobileNavActive={mobileNavActive}>

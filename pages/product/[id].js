@@ -16,9 +16,6 @@ import Footer from "@/components/Footer";
 
 const ColWrapper = styled.div`
   background-color: white;
-
-  
- 
   display: grid;
   grid-template-columns: 1fr;
   padding-top: 130px;
@@ -312,7 +309,6 @@ export async function getServerSideProps(context) {
   await mongooseConnect();
   const { id } = context.query;
 
-  // Retrieve the product from the database
   const product = await Product.findById(id);
 
   const androidProducts = await Product.find({
