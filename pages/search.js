@@ -55,7 +55,7 @@ export default function Search({ searchResults }) {
       </StyledSection>
       
     <SearchResultsWrapper>
-      <h2>Search Results for "{q}"</h2>
+    <h2>Search Results for {q}</h2>
       {searchResults.length === 0 ? (
         <p>No results found</p>
       ) : (
